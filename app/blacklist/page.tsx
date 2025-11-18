@@ -9,15 +9,15 @@ export default function BlacklistPage() {
   const [error, setError] = useState("");
 
   // Load names on mount
-  const loadNames = async () => {
-    const res = await fetch("/api/blacklist");
-    const data = await res.json();
-
-    if (Array.isArray(data)) setNames(data);
-    else setNames([]);
-  };
-
   useEffect(() => {
+    const loadNames = async () => {
+      const res = await fetch("/api/blacklist");
+      const data = await res.json();
+
+      if (Array.isArray(data)) setNames(data);
+      else setNames([]);
+    };
+
     loadNames();
   }, []);
 

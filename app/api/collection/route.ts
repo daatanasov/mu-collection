@@ -1,4 +1,3 @@
-// app/api/collection/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
@@ -18,22 +17,23 @@ async function ensureDataDirectory() {
   }
 }
 
-async function isAuthenticated(request: NextRequest): Promise<boolean> {
+async function isAuthenticated(): Promise<boolean> {
   const cookieStore = await cookies();
   const authCookie = cookieStore.get(REQUIRED_COOKIE_NAME);
-
   return authCookie?.value === REQUIRED_COOKIE_VALUE;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     await ensureDataDirectory();
     const fileContent = await fs.readFile(dataFilePath, "utf-8");
     const data = JSON.parse(fileContent);
 
     return NextResponse.json(data, { status: 200 });
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+  } catch (err) {
+    const error = err as NodeJS.ErrnoException;
+
+    if (error.code === "ENOENT") {
       return NextResponse.json(
         { message: "No collection data found" },
         { status: 404 }
@@ -48,8 +48,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  // Check authentication
-  if (!(await isAuthenticated(request))) {
+  if (!(await isAuthenticated())) {
     return NextResponse.json(
       { error: "Unauthorized - Valid authentication cookie required" },
       { status: 401 }
@@ -66,7 +65,7 @@ export async function POST(request: NextRequest) {
       { message: "Collection data created successfully", data: newData },
       { status: 201 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to create collection data" },
       { status: 500 }
@@ -75,8 +74,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-  // Check authentication
-  if (!(await isAuthenticated(request))) {
+  if (!(await isAuthenticated())) {
     return NextResponse.json(
       { error: "Unauthorized - Valid authentication cookie required" },
       { status: 401 }
@@ -97,7 +95,7 @@ export async function PUT(request: NextRequest) {
       { message: "Collection data updated successfully", data: updatedData },
       { status: 200 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to update collection data" },
       { status: 500 }
@@ -105,9 +103,8 @@ export async function PUT(request: NextRequest) {
   }
 }
 
-export async function DELETE(request: NextRequest) {
-  // Check authentication
-  if (!(await isAuthenticated(request))) {
+export async function DELETE() {
+  if (!(await isAuthenticated())) {
     return NextResponse.json(
       { error: "Unauthorized - Valid authentication cookie required" },
       { status: 401 }
@@ -122,8 +119,10 @@ export async function DELETE(request: NextRequest) {
       { message: "Collection data deleted successfully" },
       { status: 200 }
     );
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+  } catch (err) {
+    const error = err as NodeJS.ErrnoException;
+
+    if (error.code === "ENOENT") {
       return NextResponse.json(
         { message: "Collection data already deleted or does not exist" },
         { status: 404 }

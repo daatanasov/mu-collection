@@ -26,10 +26,6 @@ const CollectionTracker = () => {
   const [selectedHero, setSelectedHero] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
     try {
       const response = await fetch("/api/collection");
@@ -46,6 +42,10 @@ const CollectionTracker = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const initializeData = () => {
     const initialData: CollectionData = {

@@ -16,10 +16,11 @@ async function ensureDataDirectory() {
 async function readData(): Promise<string[]> {
   try {
     const file = await fs.readFile(dataFilePath, "utf8");
-    return JSON.parse(file);
-  } catch (err: any) {
-    if (err.code === "ENOENT") return [];
-    throw err;
+    return JSON.parse(file) as string[];
+  } catch (err) {
+    const error = err as NodeJS.ErrnoException;
+    if (error.code === "ENOENT") return [];
+    throw error;
   }
 }
 
@@ -28,8 +29,7 @@ export async function GET() {
   try {
     await ensureDataDirectory();
     const names = await readData();
-    console.log(names);
-    // Always return array
+
     if (!Array.isArray(names)) {
       return NextResponse.json([], { status: 200 });
     }
@@ -45,8 +45,8 @@ export async function POST(request: NextRequest) {
   try {
     await ensureDataDirectory();
 
-    const body = await request.json();
-    const nickname: string = body?.nickname;
+    const body = (await request.json()) as { nickname?: string };
+    const nickname = body?.nickname;
 
     if (!nickname || typeof nickname !== "string") {
       return NextResponse.json(
@@ -57,7 +57,6 @@ export async function POST(request: NextRequest) {
 
     const names = await readData();
 
-    // Case-insensitive uniqueness check
     const exists = names.some(
       (n) => n.toLowerCase() === nickname.toLowerCase()
     );
@@ -74,7 +73,7 @@ export async function POST(request: NextRequest) {
     await fs.writeFile(dataFilePath, JSON.stringify(updated, null, 2), "utf8");
 
     return NextResponse.json(updated, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to save nickname" },
       { status: 500 }
