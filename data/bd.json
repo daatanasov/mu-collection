@@ -110,8 +110,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Boots": {
         "options": [
@@ -158,8 +158,8 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       }
     },
     "Plate Set": {
@@ -254,8 +254,8 @@
           "Increase Maximum Life",
           "Increase Zen Drop Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Pants": {
         "options": [
@@ -668,8 +668,8 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Gloves": {
         "options": [
@@ -683,8 +683,8 @@
           "Increase Maximum Life",
           "Reflect Damage"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       }
     },
     "Hurricane Set": {
@@ -1128,8 +1128,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       }
     },
     "Storm Zahard Set": {
@@ -1424,8 +1424,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Gloves": {
         "options": [
@@ -1440,8 +1440,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       }
     },
     "Bone Set": {
@@ -1450,8 +1450,8 @@
           "Increase Maximum SD",
           "Increase Zen Drop Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Armor": {
         "options": [
@@ -1588,8 +1588,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Pants": {
         "options": [
@@ -1925,8 +1925,8 @@
           "Increase Maximum SD",
           "Increase Zen Drop Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Armor": {
         "options": [
@@ -1956,8 +1956,8 @@
           "Reflect Damage",
           "Defense Success Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       }
     },
     "Silk Set": {
@@ -2022,8 +2022,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Gloves": {
         "options": [
@@ -2047,8 +2047,8 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Armor": {
         "options": [
@@ -2148,8 +2148,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Gloves": {
         "options": [
@@ -2274,8 +2274,8 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Boots": {
         "options": [
@@ -2681,8 +2681,8 @@
           "Increase Maximum SD",
           "Reflect Damage"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Pants": {
         "options": [
@@ -3048,8 +3048,8 @@
           "Increase Maximum Life",
           "Reflect Damage"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Boots": {
         "options": [
@@ -3078,8 +3078,8 @@
         "options": [
           "None"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       },
       "Gloves": {
         "options": [
@@ -3303,8 +3303,8 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": true,
-        "collectedPlace": "Halkata"
+        "collected": false,
+        "collectedPlace": null
       }
     },
     "Brilliant Set": {
