@@ -105,7 +105,7 @@ const CollectionTracker = () => {
 
     return result;
   };
-  const completionGroups = getAllSetCompletion();
+  const completionGroups: Record<string, string[]> = getAllSetCompletion();
 
   const fetchData = async () => {
     try {
@@ -369,11 +369,11 @@ const CollectionTracker = () => {
             .map((percent: string) => (
               <div key={percent} className="mb-2">
                 <span className="font-semibold text-white">{percent}%:</span>
-                {completionGroups[percent].map(
+                {completionGroups[String(percent)].map(
                   (name: string, index: number) => (
                     <span
                       key={`${percent}-${name}-${index}`}
-                      className="inline-block ml-3 px-2 py-1 bg-slate-700 text-white rounded">
+                      className="inline-block ml-3 mb-3 px-2 py-1 bg-slate-700 text-white rounded">
                       {name}
                     </span>
                   )
