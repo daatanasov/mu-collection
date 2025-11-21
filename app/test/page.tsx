@@ -19,8 +19,42 @@ interface HeroData {
 interface CollectionData {
   [heroClass: string]: HeroData;
 }
-const isSetFullyCollected = (setData: SetData) => {
-  return Object.values(setData).every((piece) => piece.collected === true);
+const heroSuffixMap: Record<string, string> = {
+  "Blade Knight": "bk",
+  "Blade Master": "bm",
+  "Dark Wizard": "dw",
+  "Soul Master": "sm",
+  "Grand Master": "gm",
+  "Magic Gladiator": "mg",
+  "Dark Knight": "dk",
+  "Fairy Elf": "fe",
+  "Muse Elf": "me",
+  Elf: "elf",
+  Summoner: "sum",
+  "Rage Fighter": "rf",
+  "Grow Lancer": "gl",
+  "Dark Lord": "dl",
+  "Wizard Soul Master": "dw",
+  // add more as needed
+};
+
+const isSetFullyCollected = (setData: SetData, setName: string) => {
+  const isCollected = Object.values(setData).every(
+    (piece) => piece.collected === true
+  );
+  return isCollected;
+};
+
+const getSetCompletion = (setData: SetData) => {
+  const pieces = Object.values(setData);
+  const total = pieces.length;
+  const collected = pieces.filter((piece) => piece.collected).length;
+
+  return {
+    total,
+    collected,
+    percent: Math.round((collected / total) * 100),
+  };
 };
 
 const CollectionTracker = () => {
@@ -28,6 +62,50 @@ const CollectionTracker = () => {
   const [loading, setLoading] = useState(true);
   const [selectedHero, setSelectedHero] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [collectedSet, setCollectedSet] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+
+  useEffect(() => {
+    if (!data) return;
+
+    const newCollected: { [key: string]: boolean } = {};
+
+    Object.values(data).forEach((heroSets) => {
+      Object.entries(heroSets).forEach(([setName, pieces]) => {
+        const isCollected = Object.values(pieces).every(
+          (piece) => piece.collected === true
+        );
+        if (isCollected) newCollected[setName] = true;
+      });
+    });
+
+    setCollectedSet(newCollected);
+  }, [data]);
+
+  const getAllSetCompletion = () => {
+    if (!data) return {};
+
+    const result: { [percent: number]: string[] } = {};
+
+    Object.entries(data).forEach(([heroClass, heroSets]) => {
+      Object.entries(heroSets).forEach(([setName, setData]) => {
+        const pieces = Object.values(setData);
+        const total = pieces.length;
+        const collected = pieces.filter((p) => p.collected).length;
+        const percent = Math.round((collected / total) * 100);
+
+        const suffix = heroSuffixMap[heroClass] ?? "";
+        const labeledName = `${setName}-${suffix}`;
+
+        if (!result[percent]) result[percent] = [];
+        result[percent].push(labeledName);
+      });
+    });
+
+    return result;
+  };
+  const completionGroups = getAllSetCompletion();
 
   const fetchData = async () => {
     try {
@@ -281,7 +359,28 @@ const CollectionTracker = () => {
         <h1 className="text-4xl font-bold text-white mb-8 text-center">
           Item Collection Tracker
         </h1>
+        <div className="mb-8 bg-slate-800/50 p-4 rounded-lg border border-purple-500/30">
+          <h2 className="text-xl font-bold text-purple-300 mb-3">
+            Set Completion Overview
+          </h2>
 
+          {Object.keys(completionGroups)
+            .sort((a, b) => Number(b) - Number(a)) // Sort 100 → 0
+            .map((percent: string) => (
+              <div key={percent} className="mb-2">
+                <span className="font-semibold text-white">{percent}%:</span>
+                {completionGroups[percent].map(
+                  (name: string, index: number) => (
+                    <span
+                      key={`${percent}-${name}-${index}`}
+                      className="inline-block ml-3 px-2 py-1 bg-slate-700 text-white rounded">
+                      {name}
+                    </span>
+                  )
+                )}
+              </div>
+            ))}
+        </div>
         {/* Filters */}
         <div className="mb-8 flex flex-col md:flex-row gap-4">
           {/* Hero Class Dropdown */}
@@ -339,14 +438,27 @@ const CollectionTracker = () => {
                   <div
                     key={setName}
                     className={`backdrop-blur rounded-lg p-6 mb-4 transition-all border
-    ${
-      isSetFullyCollected(pieces)
-        ? "bg-green-900 border-green-500"
-        : "bg-slate-800/50 border-purple-500/30"
-    }`}>
-                    <h3 className="text-2xl font-semibold text-purple-200 mb-4">
-                      {setName}
-                    </h3>
+                    ${
+                      isSetFullyCollected(pieces, setName)
+                        ? "bg-green-900 border-green-500"
+                        : "bg-slate-800/50 border-purple-500/30"
+                    }`}>
+                    {(() => {
+                      const { total, collected, percent } =
+                        getSetCompletion(pieces);
+
+                      return (
+                        <div className="flex justify-between items-center mb-4">
+                          <h3 className="text-2xl font-semibold text-purple-200">
+                            {setName}
+                          </h3>
+
+                          <span className="text-sm text-white bg-slate-700 px-3 py-1 rounded-lg">
+                            {collected}/{total} collected ({percent}%)
+                          </span>
+                        </div>
+                      );
+                    })()}
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Object.entries(pieces).map(([pieceName, pieceData]) => (
