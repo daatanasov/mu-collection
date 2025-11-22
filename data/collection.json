@@ -2,27 +2,40 @@
   "Blade Knight": {
     "Leather Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Armor": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "Ha"
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
@@ -38,12 +51,17 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -57,196 +75,288 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None", "luck"],
+        "options": [
+          "None",
+          "luck"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Scale Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Brass Set": {
       "Helm": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       }
     },
     "Plate Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Dragon Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Armor": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Pants": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Black Dragon Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Dark Phoenix Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Boots": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
+        "collected": true,
+        "collectedPlace": "bog"
       }
     },
     "Great Dragon Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Armor": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -262,7 +372,10 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -276,39 +389,55 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Brave Set": {
       "Helm": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
@@ -324,7 +453,10 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -338,7 +470,10 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
@@ -354,17 +489,26 @@
     },
     "Brilliant Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Maximum SD"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Reflect Damage", "Defense Success Rate"],
+        "options": [
+          "Reflect Damage",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -389,12 +533,18 @@
     },
     "Apocalypse Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -417,34 +567,52 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Lightning Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -453,22 +621,33 @@
   "Magic Gladiator": {
     "Storm Crow Set": {
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "Toniohuq-bank"
       }
@@ -493,12 +672,17 @@
         "collectedPlace": "ha"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       }
@@ -523,7 +707,9 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
@@ -539,7 +725,10 @@
     },
     "Volcano Set": {
       "Armor": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -562,29 +751,42 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Phantom Set": {
       "Armor": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
@@ -609,19 +811,28 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
+        "collected": true,
+        "collectedPlace": "tonio-bank"
       }
     },
     "Brilliant Set": {
       "Armor": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -664,12 +875,18 @@
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -725,108 +942,157 @@
   "Rage Fighter": {
     "Leather Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Scale Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Brass Set": {
       "Helm": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Plate Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -842,7 +1108,10 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
@@ -856,51 +1125,72 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       }
     },
     "Storm Zahard Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Piercing Gloves Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       }
@@ -925,12 +1215,16 @@
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
@@ -946,34 +1240,49 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Manticore": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -989,7 +1298,10 @@
     },
     "Brilliant Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1003,12 +1315,18 @@
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1042,19 +1360,28 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Lightning Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1068,7 +1395,10 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1077,17 +1407,23 @@
   "Wizard Soul Master": {
     "Pad Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
@@ -1101,14 +1437,19 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       }
     },
     "Bone Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
@@ -1118,8 +1459,8 @@
           "Reflect Damage",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "TOnio-bank"
       },
       "Pants": {
         "options": [
@@ -1131,12 +1472,18 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["None", "Luck"],
+        "options": [
+          "None",
+          "Luck"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       }
@@ -1152,17 +1499,26 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None", "Luck"],
+        "options": [
+          "None",
+          "Luck"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
@@ -1178,27 +1534,42 @@
     },
     "Legendary Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Armor": {
-        "options": ["None", "Luck"],
+        "options": [
+          "None",
+          "Luck"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Gloves": {
-        "options": ["None", "Luck"],
+        "options": [
+          "None",
+          "Luck"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1214,29 +1585,39 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Boghuq"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Dark Soul Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -1250,17 +1631,25 @@
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1276,49 +1665,74 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None", "Increase Zen Drop Rate"],
+        "options": [
+          "None",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Hades Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1352,12 +1766,18 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1391,7 +1811,10 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1434,29 +1857,44 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Lightning Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1483,22 +1921,32 @@
   "Elf": {
     "Vine Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -1523,56 +1971,82 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       }
     },
     "Wind Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       }
     },
     "Spirit Set": {
       "Helm": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
@@ -1604,14 +2078,19 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       }
     },
     "Guardian Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1634,61 +2113,85 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Holy Spirit Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       }
     },
     "Red Spirit Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -1704,76 +2207,114 @@
     },
     "Sylphid Ray Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Divine Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Manticore Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1789,7 +2330,10 @@
     },
     "Brilliant Elf Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1812,19 +2356,28 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Apocalypse Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1847,24 +2400,36 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Lightning Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1887,7 +2452,10 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1896,27 +2464,40 @@
   "Dark Lord": {
     "Leather Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -1932,12 +2513,17 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -1951,46 +2537,65 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Scale Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Light Plate Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2004,7 +2609,10 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2020,17 +2628,24 @@
     },
     "Adamantine Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
@@ -2055,22 +2670,33 @@
     },
     "Dark Steel Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Pants": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
@@ -2086,22 +2712,33 @@
     },
     "Dark Master Set": {
       "Helm": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2126,12 +2763,16 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2145,7 +2786,10 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -2179,7 +2823,9 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -2204,12 +2850,18 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2223,19 +2875,29 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Brilliant Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Maximum SD"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2249,24 +2911,36 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Maximum SD"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Apocalypse Set": {
       "Helm": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2280,7 +2954,10 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2305,7 +2982,10 @@
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2319,7 +2999,10 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2337,12 +3020,17 @@
   "Summoner": {
     "Violent Wind Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum Life",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
@@ -2352,60 +3040,84 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Tonio-bank"
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       }
     },
     "Red Winged Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
       "Gloves": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "Bogihuq"
       },
       "Boots": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Ancient Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Armor": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+        "options": [
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum Life", "Reflect Damage"],
+        "options": [
+          "Increase Maximum Life",
+          "Reflect Damage"
+        ],
         "collected": true,
         "collectedPlace": "ha"
       },
@@ -2430,12 +3142,17 @@
     },
     "Demonic Set": {
       "Helm": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "sh"
       },
       "Armor": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
+        "options": [
+          "Damage Decrease",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2449,19 +3166,27 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Storm Blitz Set": {
       "Helm": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+        "options": [
+          "Reflect Damage",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2475,34 +3200,50 @@
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Boots": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Maximum SD"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Eternal Winged Set": {
       "Helm": {
-        "options": ["Reflect Damage", "Defense Success Rate"],
+        "options": [
+          "Reflect Damage",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
       "Pants": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       },
@@ -2516,29 +3257,43 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["None"],
+        "options": [
+          "None"
+        ],
         "collected": true,
         "collectedPlace": "dd"
       }
     },
     "Manticore Set": {
       "Helm": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
+        "options": [
+          "Increase Maximum Life",
+          "Increase Maximum SD"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
+        "options": [
+          "Damage Decrease",
+          "Reflect Damage"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": true,
         "collectedPlace": "dd-bank-site"
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2590,14 +3345,20 @@
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
+        "options": [
+          "Increase Maximum SD",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Apocalypse Set": {
       "Helm": {
-        "options": ["Reflect Damage", "Defense Success Rate"],
+        "options": [
+          "Reflect Damage",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -2620,39 +3381,60 @@
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
     },
     "Lightning Set": {
       "Helm": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Armor": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Pants": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
+        "options": [
+          "Defense Success Rate",
+          "Increase Zen Drop Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Gloves": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
+        "options": [
+          "Increase Maximum Life",
+          "Damage Decrease"
+        ],
         "collected": false,
         "collectedPlace": null
       },
       "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "options": [
+          "Increase Maximum SD",
+          "Defense Success Rate"
+        ],
         "collected": false,
         "collectedPlace": null
       }
