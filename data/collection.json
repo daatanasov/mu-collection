@@ -301,8 +301,8 @@
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Gloves": {
         "options": [
@@ -368,16 +368,16 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Dd"
       },
       "Armor": {
         "options": [
           "Increase Maximum Life",
           "Reflect Damage"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Pants": {
         "options": [
@@ -392,15 +392,15 @@
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Boots": {
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       }
     },
     "Brave Set": {
@@ -1725,8 +1725,8 @@
           "Increase Maximum Life",
           "Defense Success Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Boots": {
         "options": [
@@ -1974,8 +1974,8 @@
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Bogihuq"
       },
       "Pants": {
         "options": [
@@ -2673,8 +2673,8 @@
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Armor": {
         "options": [
@@ -2766,15 +2766,15 @@
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Pants": {
         "options": [
           "None"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       },
       "Gloves": {
         "options": [
@@ -2790,8 +2790,8 @@
           "Increase Maximum Life",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "dd"
       }
     },
     "Royal Set": {
