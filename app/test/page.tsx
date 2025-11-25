@@ -35,7 +35,6 @@ const heroSuffixMap: Record<string, string> = {
   "Grow Lancer": "gl",
   "Dark Lord": "dl",
   "Wizard Soul Master": "dw",
-  // add more as needed
 };
 
 const isSetFullyCollected = (setData: SetData, setName: string) => {
@@ -105,6 +104,29 @@ const CollectionTracker = () => {
 
     return result;
   };
+
+  const getOverallCompletion = () => {
+    if (!data) return { total: 0, collected: 0, percent: 0 };
+
+    let totalPieces = 0;
+    let collectedPieces = 0;
+
+    Object.values(data).forEach((heroSets) => {
+      Object.values(heroSets).forEach((setData) => {
+        const pieces = Object.values(setData);
+        totalPieces += pieces.length;
+        collectedPieces += pieces.filter((p) => p.collected).length;
+      });
+    });
+
+    return {
+      total: totalPieces,
+      collected: collectedPieces,
+      percent:
+        totalPieces > 0 ? Math.round((collectedPieces / totalPieces) * 100) : 0,
+    };
+  };
+
   const completionGroups: Record<string, string[]> = getAllSetCompletion();
 
   const fetchData = async () => {
@@ -296,19 +318,22 @@ const CollectionTracker = () => {
     saveData(newData);
   };
 
+  const handleSetClick = (labeledName: string) => {
+    const setNameWithoutSuffix = labeledName.split("-").slice(0, -1).join("-");
+    setSearchQuery(setNameWithoutSuffix);
+  };
+
   const getFilteredData = (): CollectionData => {
     if (!data) return {};
 
     let filteredData: CollectionData = {};
 
-    // Filter by selected hero
     if (selectedHero === "All") {
       filteredData = { ...data };
     } else {
       filteredData = { [selectedHero]: data[selectedHero] };
     }
 
-    // Filter by search query
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
       const searchFiltered: CollectionData = {};
@@ -317,11 +342,9 @@ const CollectionTracker = () => {
         const matchingSets: HeroData = {};
 
         Object.entries(sets).forEach(([setName, pieces]) => {
-          // Check if set name matches
           if (setName.toLowerCase().includes(query)) {
             matchingSets[setName] = pieces;
           } else {
-            // Check if any piece name matches
             const matchingPieces: SetData = {};
             Object.entries(pieces).forEach(([pieceName, pieceData]) => {
               if (pieceName.toLowerCase().includes(query)) {
@@ -352,6 +375,7 @@ const CollectionTracker = () => {
 
   const filteredData = getFilteredData();
   const heroClasses = data ? ["All", ...Object.keys(data)] : ["All"];
+  const overallCompletion = getOverallCompletion();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
@@ -359,63 +383,93 @@ const CollectionTracker = () => {
         <h1 className="text-4xl font-bold text-white mb-8 text-center">
           Item Collection Tracker
         </h1>
+
+        {/* Sticky Filters Section */}
+        <div className="sticky top-0 z-40 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pb-4 -mx-8 px-8 pt-4">
+          {/* Overall Completion */}
+          <div className="mb-4 bg-slate-800/90 backdrop-blur-sm p-4 rounded-lg border border-purple-500/50 shadow-lg">
+            <h2 className="text-xl font-bold text-purple-300 mb-2">
+              Overall Collection Progress
+            </h2>
+            <div className="flex items-center gap-4">
+              <div className="flex-1 bg-slate-700 rounded-full h-8 overflow-hidden border border-slate-600">
+                <div
+                  className="bg-gradient-to-r from-purple-500 to-green-500 h-full transition-all duration-500 flex items-center justify-center"
+                  style={{ width: `${overallCompletion.percent}%` }}>
+                  {overallCompletion.percent > 10 && (
+                    <span className="text-sm font-bold text-white">
+                      {overallCompletion.percent}%
+                    </span>
+                  )}
+                </div>
+              </div>
+              <span className="text-white font-semibold whitespace-nowrap">
+                {overallCompletion.collected} / {overallCompletion.total} items
+              </span>
+            </div>
+          </div>
+
+          {/* Filters */}
+          <div className="mb-4 flex flex-col md:flex-row gap-4">
+            {/* Hero Class Dropdown */}
+            <div className="flex-1">
+              <label className="block text-sm font-medium text-purple-200 mb-2">
+                Hero Class
+              </label>
+              <select
+                value={selectedHero}
+                onChange={(e) => setSelectedHero(e.target.value)}
+                className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
+                {heroClasses.map((hero) => (
+                  <option key={hero} value={hero}>
+                    {hero}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Search Input */}
+            <div className="flex-1">
+              <label className="block text-sm font-medium text-purple-200 mb-2">
+                Search Collection
+              </label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search by set or piece name..."
+                  className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Set Completion Overview */}
         <div className="mb-8 bg-slate-800/50 p-4 rounded-lg border border-purple-500/30">
           <h2 className="text-xl font-bold text-purple-300 mb-3">
             Set Completion Overview
           </h2>
 
           {Object.keys(completionGroups)
-            .sort((a, b) => Number(b) - Number(a)) // Sort 100 → 0
+            .sort((a, b) => Number(b) - Number(a))
             .map((percent: string) => (
               <div key={percent} className="mb-2">
                 <span className="font-semibold text-white">{percent}%:</span>
                 {completionGroups[String(percent)].map(
                   (name: string, index: number) => (
-                    <span
+                    <button
                       key={`${percent}-${name}-${index}`}
-                      className="inline-block ml-3 mb-3 px-2 py-1 bg-slate-700 text-white rounded">
+                      onClick={() => handleSetClick(name)}
+                      className="inline-block ml-3 mb-3 px-3 py-1.5 bg-slate-700 hover:bg-purple-600 text-white rounded cursor-pointer transition-all hover:scale-105 active:scale-95">
                       {name}
-                    </span>
+                    </button>
                   )
                 )}
               </div>
             ))}
-        </div>
-        {/* Filters */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4">
-          {/* Hero Class Dropdown */}
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-purple-200 mb-2">
-              Hero Class
-            </label>
-            <select
-              value={selectedHero}
-              onChange={(e) => setSelectedHero(e.target.value)}
-              className="w-full px-4 py-3 bg-slate-800 border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
-              {heroClasses.map((hero) => (
-                <option key={hero} value={hero}>
-                  {hero}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Search Input */}
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-purple-200 mb-2">
-              Search Collection
-            </label>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by set or piece name..."
-                className="w-full pl-10 pr-4 py-3 bg-slate-800 border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-              />
-            </div>
-          </div>
         </div>
 
         {/* Results */}
