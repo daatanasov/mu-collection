@@ -1,8 +1,19 @@
-"use client";
 import React, { useState, useMemo } from "react";
 import { Search } from "lucide-react";
 
-const armorData = [
+interface ArmorItem {
+  set: string;
+  part: string;
+  options: string[];
+  collected: boolean;
+  collectedPlace: string;
+}
+
+interface GroupedSets {
+  [key: string]: ArmorItem[];
+}
+
+const armorData: ArmorItem[] = [
   {
     set: "Pad",
     part: "Gloves",
@@ -1080,7 +1091,7 @@ export default function ArmorSetSearch() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredSets = useMemo(() => {
-    if (!searchTerm.trim()) return {};
+    if (!searchTerm.trim()) return {} as GroupedSets;
 
     const filtered = armorData.filter((item) =>
       item.set.toLowerCase().includes(searchTerm.toLowerCase())
@@ -1093,7 +1104,7 @@ export default function ArmorSetSearch() {
       }
       acc[item.set].push(item);
       return acc;
-    }, {});
+    }, {} as GroupedSets);
 
     return grouped;
   }, [searchTerm]);
@@ -1136,7 +1147,7 @@ export default function ArmorSetSearch() {
               </h2>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filteredSets[setName].map((item, idx) => (
+                {filteredSets[setName].map((item: ArmorItem, idx: number) => (
                   <div
                     key={idx}
                     className="bg-slate-800/50 rounded-lg p-4 border border-purple-500/30">
@@ -1153,7 +1164,7 @@ export default function ArmorSetSearch() {
                       <p className="text-xs text-gray-400 font-medium mb-2">
                         Available Options:
                       </p>
-                      {item.options.map((option, optIdx) => (
+                      {item.options.map((option: string, optIdx: number) => (
                         <div
                           key={optIdx}
                           className="flex items-center text-sm text-gray-300">
