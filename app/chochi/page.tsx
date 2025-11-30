@@ -131,7 +131,7 @@ const CollectionTracker = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/collection");
+      const response = await fetch("/api/collection-chochi");
       if (response.ok) {
         const jsonData: CollectionData = await response.json();
         setData(jsonData);

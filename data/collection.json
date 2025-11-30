@@ -43,45 +43,6 @@
         "collectedPlace": "Bogihuq2 and dd"
       }
     },
-    "Scale Set": {
-      "Helm": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage"
-        ],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Armor": {
-        "options": [
-          "None"
-        ],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Pants": {
-        "options": [
-          "None"
-        ],
-        "collected": true,
-        "collectedPlace": "DyrtaKurva"
-      },
-      "Gloves": {
-        "options": [
-          "None"
-        ],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Dyrta"
-      }
-    },
     "Brass Set": {
       "Helm": {
         "options": [
@@ -2206,48 +2167,6 @@
         "collectedPlace": null
       }
     },
-    "Dark Master Set": {
-      "Helm": {
-        "options": [
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "TonColl"
-      },
-      "Pants": {
-        "options": [
-          "None"
-        ],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Gloves": {
-        "options": [
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Dyrta"
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum SD",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Dyrta"
-      }
-    },
     "Sunlight Set": {
       "Helm": {
         "options": [
@@ -2790,8 +2709,8 @@
           "Increase Maximum SD",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "ddwill"
       },
       "Boots": {
         "options": [
