@@ -1,6 +1,17 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Check, X, Search } from "lucide-react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Check, X, Search, Download, Upload, RefreshCcw } from "lucide-react";
+
+/*
+  Enhanced CollectionTracker
+  - Adds Piece Type filter (Helm, Armor, Pants, Gloves, Boots, etc.)
+  - Adds multi-select Collected Status filter: collected, uncollected, lastMissing
+  - Adds quick Export / Import JSON for backups
+  - Keeps original save/fetch hooks but Export/Import works locally
+  - All in a single-file React component (default export)
+
+  Drop this file into a Next.js app route/client component environment.
+*/
 
 interface PieceData {
   options: string[];
@@ -20,11 +31,111 @@ interface CollectionData {
   [heroClass: string]: HeroData;
 }
 
-const CollectionTracker = () => {
+const heroSuffixMap: Record<string, string> = {
+  "Blade Knight": "bk",
+  "Blade Master": "bm",
+  "Dark Wizard": "dw",
+  "Soul Master": "sm",
+  "Grand Master": "gm",
+  "Magic Gladiator": "mg",
+  "Dark Knight": "dk",
+  "Fairy Elf": "fe",
+  "Muse Elf": "me",
+  Elf: "elf",
+  Summoner: "sum",
+  "Rage Fighter": "rf",
+  "Grow Lancer": "gl",
+  "Dark Lord": "dl",
+  "Wizard Soul Master": "dw",
+};
+
+const defaultPieceTypes = [
+  "Helm",
+  "Armor",
+  "Pants",
+  "Gloves",
+  "Boots",
+  // add more types if your game has them
+];
+
+const CollectionTracker: React.FC = () => {
   const [data, setData] = useState<CollectionData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedHero, setSelectedHero] = useState<string>("All");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedHero, setSelectedHero] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [collectedSet, setCollectedSet] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+  const [optionsFilter, setOptionsFilter] = useState("All");
+  const [hideCollected, setHideCollected] = useState(false);
+  const [overviewExpanded, setOverviewExpanded] = useState(false);
+  const [filtersExpanded, setFiltersExpanded] = useState(true);
+
+  // NEW: piece type and collected status multi-select
+  const [pieceTypeFilter, setPieceTypeFilter] = useState("All");
+  const [collectedStatusFilter, setCollectedStatusFilter] = useState<string[]>(
+    []
+  );
+
+  useEffect(() => {
+    if (!data) return;
+
+    const newCollected: { [key: string]: boolean } = {};
+    Object.values(data).forEach((heroSets) => {
+      Object.entries(heroSets).forEach(([setName, pieces]) => {
+        const isCollected = Object.values(pieces).every(
+          (piece) => piece.collected === true
+        );
+        if (isCollected) newCollected[setName] = true;
+      });
+    });
+    setCollectedSet(newCollected);
+  }, [data]);
+
+  const getAllSetCompletion = () => {
+    if (!data) return {};
+
+    const result: { [percent: number]: string[] } = {};
+    Object.entries(data).forEach(([heroClass, heroSets]) => {
+      Object.entries(heroSets).forEach(([setName, setData]) => {
+        const pieces = Object.values(setData);
+        const total = pieces.length;
+        const collected = pieces.filter((p) => p.collected).length;
+        const percent = Math.round((collected / total) * 100);
+        const suffix = heroSuffixMap[heroClass] ?? "";
+        const labeledName = `${setName}-${suffix}`;
+
+        if (!result[percent]) result[percent] = [];
+        result[percent].push(labeledName);
+      });
+    });
+
+    return result;
+  };
+
+  const getOverallCompletion = () => {
+    if (!data) return { total: 0, collected: 0, percent: 0 };
+
+    let totalPieces = 0;
+    let collectedPieces = 0;
+
+    Object.values(data).forEach((heroSets) => {
+      Object.values(heroSets).forEach((setData) => {
+        const pieces = Object.values(setData);
+        totalPieces += pieces.length;
+        collectedPieces += pieces.filter((p) => p.collected).length;
+      });
+    });
+
+    return {
+      total: totalPieces,
+      collected: collectedPieces,
+      percent:
+        totalPieces > 0 ? Math.round((collectedPieces / totalPieces) * 100) : 0,
+    };
+  };
+
+  const completionGroups: Record<string, string[]> = getAllSetCompletion();
 
   const fetchData = async () => {
     try {
@@ -168,6 +279,7 @@ const CollectionTracker = () => {
         },
       },
     };
+
     setData(initialData);
     saveData(initialData);
   };
@@ -197,6 +309,7 @@ const CollectionTracker = () => {
     if (!item.collected) {
       item.collectedPlace = null;
     }
+
     setData(newData);
     saveData(newData);
   };
@@ -211,23 +324,30 @@ const CollectionTracker = () => {
 
     const newData: CollectionData = { ...data };
     newData[heroClass][setName][piece].collectedPlace = place;
+
     setData(newData);
     saveData(newData);
   };
 
+  const handleSetClick = (labeledName: string) => {
+    const setNameWithoutSuffix = labeledName.split("-").slice(0, -1).join("-");
+    setSearchQuery(setNameWithoutSuffix);
+    setOverviewExpanded(false);
+  };
+
+  // ---- NEW: consolidated filtering pipeline ----
   const getFilteredData = (): CollectionData => {
     if (!data) return {};
 
     let filteredData: CollectionData = {};
 
-    // Filter by selected hero
     if (selectedHero === "All") {
       filteredData = { ...data };
     } else {
       filteredData = { [selectedHero]: data[selectedHero] };
     }
 
-    // Filter by search query
+    // Search filter
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
       const searchFiltered: CollectionData = {};
@@ -236,11 +356,9 @@ const CollectionTracker = () => {
         const matchingSets: HeroData = {};
 
         Object.entries(sets).forEach(([setName, pieces]) => {
-          // Check if set name matches
           if (setName.toLowerCase().includes(query)) {
             matchingSets[setName] = pieces;
           } else {
-            // Check if any piece name matches
             const matchingPieces: SetData = {};
             Object.entries(pieces).forEach(([pieceName, pieceData]) => {
               if (pieceName.toLowerCase().includes(query)) {
@@ -259,98 +377,542 @@ const CollectionTracker = () => {
         }
       });
 
-      return searchFiltered;
+      filteredData = searchFiltered;
+    }
+
+    // Options filter (unchanged)
+    if (optionsFilter !== "All") {
+      const optionsFiltered: CollectionData = {};
+
+      Object.entries(filteredData).forEach(([heroClass, sets]) => {
+        const matchingSets: HeroData = {};
+
+        Object.entries(sets).forEach(([setName, pieces]) => {
+          const matchingPieces: SetData = {};
+
+          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
+            const optionCount =
+              pieceData.options.length === 1 && pieceData.options[0] === "None"
+                ? 0
+                : pieceData.options.length;
+
+            let matches = false;
+            if (optionsFilter === "0" && optionCount === 0) matches = true;
+            if (optionsFilter === "2" && optionCount === 2) matches = true;
+            if (optionsFilter === "3" && optionCount === 3) matches = true;
+
+            if (matches) {
+              matchingPieces[pieceName] = pieceData;
+            }
+          });
+
+          if (Object.keys(matchingPieces).length > 0) {
+            matchingSets[setName] = matchingPieces;
+          }
+        });
+
+        if (Object.keys(matchingSets).length > 0) {
+          optionsFiltered[heroClass] = matchingSets;
+        }
+      });
+
+      filteredData = optionsFiltered;
+    }
+
+    // Piece Type filter (NEW)
+    if (pieceTypeFilter !== "All") {
+      const typeFiltered: CollectionData = {};
+
+      Object.entries(filteredData).forEach(([heroClass, sets]) => {
+        const filteredSets: HeroData = {};
+
+        Object.entries(sets).forEach(([setName, pieces]) => {
+          const matchingPieces: SetData = {};
+
+          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
+            if (pieceName === pieceTypeFilter) {
+              matchingPieces[pieceName] = pieceData;
+            }
+          });
+
+          if (Object.keys(matchingPieces).length > 0) {
+            filteredSets[setName] = matchingPieces;
+          }
+        });
+
+        if (Object.keys(filteredSets).length > 0) {
+          typeFiltered[heroClass] = filteredSets;
+        }
+      });
+
+      filteredData = typeFiltered;
+    }
+
+    // Hide collected (existing)
+    if (hideCollected) {
+      const uncollectedFiltered: CollectionData = {};
+
+      Object.entries(filteredData).forEach(([heroClass, sets]) => {
+        const matchingSets: HeroData = {};
+
+        Object.entries(sets).forEach(([setName, pieces]) => {
+          const matchingPieces: SetData = {};
+
+          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
+            if (!pieceData.collected) {
+              matchingPieces[pieceName] = pieceData;
+            }
+          });
+
+          if (Object.keys(matchingPieces).length > 0) {
+            matchingSets[setName] = matchingPieces;
+          }
+        });
+
+        if (Object.keys(matchingSets).length > 0) {
+          uncollectedFiltered[heroClass] = matchingSets;
+        }
+      });
+
+      filteredData = uncollectedFiltered;
+    }
+
+    // Collected Status multi-select (NEW)
+    if (collectedStatusFilter.length > 0) {
+      const statusFiltered: CollectionData = {};
+
+      Object.entries(filteredData).forEach(([heroClass, sets]) => {
+        const filteredSets: HeroData = {};
+
+        Object.entries(sets).forEach(([setName, pieces]) => {
+          const pieceArray = Object.values(pieces);
+          const missingCount = pieceArray.filter((p) => !p.collected).length;
+          const isLastMissing = missingCount === 1;
+
+          const matchingPieces: SetData = {};
+
+          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
+            const matchesCollected =
+              collectedStatusFilter.includes("collected") &&
+              pieceData.collected;
+
+            const matchesUncollected =
+              collectedStatusFilter.includes("uncollected") &&
+              !pieceData.collected;
+
+            const matchesLastMissing =
+              collectedStatusFilter.includes("lastMissing") &&
+              isLastMissing &&
+              !pieceData.collected;
+
+            if (matchesCollected || matchesUncollected || matchesLastMissing) {
+              matchingPieces[pieceName] = pieceData;
+            }
+          });
+
+          if (Object.keys(matchingPieces).length > 0) {
+            filteredSets[setName] = matchingPieces;
+          }
+        });
+
+        if (Object.keys(filteredSets).length > 0) {
+          statusFiltered[heroClass] = filteredSets;
+        }
+      });
+
+      filteredData = statusFiltered;
     }
 
     return filteredData;
   };
 
   if (loading) {
-    return <div className="p-8 text-center text-white">Loading...</div>;
+    return <div className="text-white text-center p-8">Loading...</div>;
   }
 
   const filteredData = getFilteredData();
   const heroClasses = data ? ["All", ...Object.keys(data)] : ["All"];
+  const overallCompletion = getOverallCompletion();
+
+  // ---- Export / Import Helpers ----
+  const handleExport = () => {
+    if (!data) return;
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `collection-export-${new Date().toISOString()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (file: File | null) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const text = String(e.target?.result ?? "");
+        const parsed: CollectionData = JSON.parse(text);
+        setData(parsed);
+        saveData(parsed);
+      } catch (err) {
+        console.error("Failed to import:", err);
+        alert("Invalid file format");
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const resetToInitial = () => {
+    if (
+      !confirm(
+        "Reset to initial demo data? This will overwrite your current data."
+      )
+    )
+      return;
+    initializeData();
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">
-          Item Collection Tracker
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 md:p-8">
+      <div className="max-w-7xl mx-auto space-y-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 mb-8">
+          🎮 Item Collection Tracker
         </h1>
 
-        {/* Filters */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4">
-          {/* Hero Class Dropdown */}
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-purple-200 mb-2">
-              Hero Class
-            </label>
-            <select
-              value={selectedHero}
-              onChange={(e) => setSelectedHero(e.target.value)}
-              className="w-full px-4 py-3 bg-slate-800 border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
-              {heroClasses.map((hero) => (
-                <option key={hero} value={hero}>
-                  {hero}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div className="sticky top-4 z-10 space-y-4">
+          <div className="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl">
+            <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 border border-purple-500/30">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <div className="text-sm font-medium text-slate-300 mb-2">
+                    Overall Collection Progress
+                  </div>
+                  <div className="relative h-8 bg-slate-800 rounded-full overflow-hidden">
+                    <div
+                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 flex items-center justify-center"
+                      style={{ width: `${overallCompletion.percent}%` }}>
+                      {overallCompletion.percent > 10 && (
+                        <span className="text-xs font-bold text-white">
+                          {overallCompletion.percent}%
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="text-sm text-slate-400 mt-2 text-center">
+                    {overallCompletion.collected} / {overallCompletion.total}{" "}
+                    items
+                  </div>
+                </div>
 
-          {/* Search Input */}
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-purple-200 mb-2">
-              Search Collection
-            </label>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by set or piece name..."
-                className="w-full pl-10 pr-4 py-3 bg-slate-800 border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-              />
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleExport}
+                    className="inline-flex items-center gap-2 bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-600 text-white hover:bg-slate-700">
+                    <Download className="w-4 h-4" /> Export
+                  </button>
+
+                  <label className="inline-flex items-center gap-2 bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-600 text-white cursor-pointer hover:bg-slate-700">
+                    <Upload className="w-4 h-4" />
+                    <input
+                      type="file"
+                      accept="application/json"
+                      onChange={(e) =>
+                        handleImport(e.target.files?.[0] ?? null)
+                      }
+                      className="hidden"
+                    />
+                    Import
+                  </label>
+
+                  <button
+                    onClick={resetToInitial}
+                    title="Reset to initial demo data"
+                    className="inline-flex items-center gap-2 bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-600 text-white hover:bg-slate-700">
+                    <RefreshCcw className="w-4 h-4" /> Reset
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Filters */}
+          <div className="bg-slate-900/80 backdrop-blur-md rounded-xl border border-purple-500/30 shadow-xl">
+            <button
+              onClick={() => setFiltersExpanded(!filtersExpanded)}
+              className="w-full flex items-center justify-between text-left p-6">
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                🎛️ Filters
+              </h3>
+              <span className="text-slate-400 text-2xl font-bold">
+                {filtersExpanded ? "−" : "+"}
+              </span>
+            </button>
+
+            {filtersExpanded && (
+              <div className="px-6 pb-6 space-y-4 border-t border-slate-600">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Hero Class Dropdown */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Hero Class
+                    </label>
+                    <select
+                      value={selectedHero}
+                      onChange={(e) => setSelectedHero(e.target.value)}
+                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
+                      {heroClasses.map((hero) => (
+                        <option key={hero} value={hero}>
+                          {hero}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Options Filter */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Options Count
+                    </label>
+                    <select
+                      value={optionsFilter}
+                      onChange={(e) => setOptionsFilter(e.target.value)}
+                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
+                      <option value="All">All</option>
+                      <option value="0">0 Options (None)</option>
+                      <option value="2">2 Options</option>
+                      <option value="3">3 Options</option>
+                    </select>
+                  </div>
+
+                  {/* Hide Collected Toggle */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Display Options
+                    </label>
+                    <button
+                      onClick={() => setHideCollected(!hideCollected)}
+                      className={`w-full px-4 py-3 rounded-lg font-medium transition-all ${
+                        hideCollected
+                          ? "bg-purple-600 hover:bg-purple-700 text-white"
+                          : "bg-slate-800/90 hover:bg-slate-700 border border-purple-500/30 text-white"
+                      }`}>
+                      {hideCollected ? "✓ Hiding Collected" : "Show All Items"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* New Filters Row */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Piece Type Filter */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Piece Type
+                    </label>
+                    <select
+                      value={pieceTypeFilter}
+                      onChange={(e) => setPieceTypeFilter(e.target.value)}
+                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
+                      <option value="All">All</option>
+                      {defaultPieceTypes.map((t) => (
+                        <option key={t} value={t}>
+                          {t}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Multi-select Collected Filter */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Collected Status
+                    </label>
+
+                    <div className="space-y-2 text-white text-sm">
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={collectedStatusFilter.includes("collected")}
+                          onChange={(e) => {
+                            const checked = e.target.checked;
+                            setCollectedStatusFilter((prev) =>
+                              checked
+                                ? [...prev, "collected"]
+                                : prev.filter((v) => v !== "collected")
+                            );
+                          }}
+                        />
+                        Collected Items
+                      </label>
+
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={collectedStatusFilter.includes(
+                            "uncollected"
+                          )}
+                          onChange={(e) => {
+                            const checked = e.target.checked;
+                            setCollectedStatusFilter((prev) =>
+                              checked
+                                ? [...prev, "uncollected"]
+                                : prev.filter((v) => v !== "uncollected")
+                            );
+                          }}
+                        />
+                        Uncollected Items
+                      </label>
+
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={collectedStatusFilter.includes(
+                            "lastMissing"
+                          )}
+                          onChange={(e) => {
+                            const checked = e.target.checked;
+                            setCollectedStatusFilter((prev) =>
+                              checked
+                                ? [...prev, "lastMissing"]
+                                : prev.filter((v) => v !== "lastMissing")
+                            );
+                          }}
+                        />
+                        Last Item Needed in Set
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Search - compact */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      🔍 Quick Search
+                    </label>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+                      <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search by set or piece name..."
+                        className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Overview accordion */}
+                <div className="bg-gradient-to-r from-slate-800/95 to-slate-700/95 backdrop-blur-sm rounded-xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/20 transition-all">
+                  <button
+                    onClick={() => setOverviewExpanded(!overviewExpanded)}
+                    className="w-full flex items-center justify-between text-left p-6">
+                    <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                      📊 Set Completion Overview
+                    </h3>
+                    <span className="text-slate-400 text-2xl font-bold">
+                      {overviewExpanded ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {overviewExpanded && (
+                    <div className="px-6 pb-6 pt-2 border-t border-slate-600">
+                      {Object.keys(completionGroups)
+                        .sort((a, b) => Number(b) - Number(a))
+                        .map((percent: string) => (
+                          <div key={percent} className="mb-4">
+                            <div className="text-slate-300 font-semibold mb-2">
+                              {percent}% Complete:
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {completionGroups[String(percent)].map(
+                                (name: string, index: number) => (
+                                  <button
+                                    key={index}
+                                    onClick={() => handleSetClick(name)}
+                                    className="px-3 py-1.5 bg-slate-700 hover:bg-purple-600 text-white text-sm rounded cursor-pointer transition-all hover:scale-105 active:scale-95">
+                                    {name}
+                                  </button>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Search - Always Visible (bottom of sticky pane) */}
+          {/* Kept compact because we added another search inside filters */}
         </div>
 
         {/* Results */}
         {Object.keys(filteredData).length === 0 ? (
-          <div className="text-center text-slate-400 py-12">
-            <p className="text-xl">No results found</p>
-            <p className="text-sm mt-2">
+          <div className="text-center py-16 bg-slate-800/50 rounded-xl border border-purple-500/30">
+            <div className="text-4xl mb-4">🔍</div>
+            <div className="text-xl text-slate-300 font-semibold mb-2">
+              No results found
+            </div>
+            <div className="text-slate-400">
               Try adjusting your filters or search query
-            </p>
+            </div>
           </div>
         ) : (
           <>
             {Object.entries(filteredData).map(([heroClass, sets]) => (
-              <div key={heroClass} className="mb-8">
-                <h2 className="text-3xl font-bold text-purple-300 mb-4">
+              <div
+                key={heroClass}
+                className="bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6 shadow-lg">
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
                   {heroClass}
                 </h2>
 
                 {Object.entries(sets).map(([setName, pieces]) => (
                   <div
                     key={setName}
-                    className="bg-slate-800/50 backdrop-blur rounded-lg p-6 mb-4 border border-purple-500/30">
-                    <h3 className="text-2xl font-semibold text-purple-200 mb-4">
-                      {setName}
-                    </h3>
+                    className="mb-6 bg-slate-900/50 rounded-lg p-4 border border-slate-600">
+                    {(() => {
+                      const { total, collected, percent } = ((): {
+                        total: number;
+                        collected: number;
+                        percent: number;
+                      } => {
+                        const piecesArr = Object.values(pieces);
+                        const total = piecesArr.length;
+                        const collected = piecesArr.filter(
+                          (p) => p.collected
+                        ).length;
+                        const percent =
+                          total > 0 ? Math.round((collected / total) * 100) : 0;
+                        return { total, collected, percent };
+                      })();
+                      return (
+                        <div className="mb-4">
+                          <h3 className="text-xl font-semibold text-purple-300 mb-2">
+                            {setName}
+                          </h3>
+                          <div className="text-sm text-slate-400">
+                            {collected}/{total} collected ({percent}%)
+                          </div>
+                        </div>
+                      );
+                    })()}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Object.entries(pieces).map(([pieceName, pieceData]) => (
                         <div
                           key={pieceName}
-                          className={`border rounded-lg p-4 transition-all ${
+                          className={`p-3 rounded-lg border transition-all ${
                             pieceData.collected
-                              ? "bg-green-900/30 border-green-500"
-                              : "bg-slate-700/50 border-slate-600"
+                              ? "bg-green-900/20 border-green-500/30"
+                              : "bg-slate-800/50 border-slate-600"
                           }`}>
-                          <div className="flex items-start justify-between mb-2">
-                            <h4 className="text-lg font-semibold text-white">
+                          <div className="flex items-center justify-between mb-3">
+                            <h4 className="font-semibold text-white">
                               {pieceName}
                             </h4>
                             <button
@@ -370,22 +932,18 @@ const CollectionTracker = () => {
                             </button>
                           </div>
 
-                          <div className="mb-3">
-                            <p className="text-xs text-slate-400 mb-1">
-                              Options:
-                            </p>
-                            <ul className="text-sm text-slate-300 space-y-1">
-                              {pieceData.options.map((option, idx) => (
-                                <li key={idx} className="text-xs">
-                                  • {option}
-                                </li>
-                              ))}
-                            </ul>
+                          <div className="text-sm text-slate-300 mb-2">
+                            <strong>Options:</strong>
                           </div>
+                          <ul className="text-sm text-slate-400 space-y-1">
+                            {pieceData.options.map((option, idx) => (
+                              <li key={idx}>• {option}</li>
+                            ))}
+                          </ul>
 
                           {pieceData.collected && (
-                            <div>
-                              <label className="text-xs text-slate-400 block mb-1">
+                            <div className="mt-3">
+                              <label className="block text-sm text-slate-300 mb-1">
                                 Collected in:
                               </label>
                               <input

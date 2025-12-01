@@ -459,151 +459,156 @@ const CollectionTracker = () => {
         {/* Sticky Filters Section */}
         {/* <div className="sticky top-4 z-10 space-y-4 bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl"> */}
         {/* Overall Completion */}
-        <div className="sticky top-4 z-10 bg-slate-900/80 backdrop-blur-md rounded-xl border border-purple-500/30 shadow-xl">
-          <button
-            onClick={() => setFiltersExpanded(!filtersExpanded)}
-            className="w-full flex items-center justify-between text-left p-6">
-            <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              🎛️ Filters & Search
-            </h3>
-            <span className="text-slate-400 text-2xl font-bold">
-              {filtersExpanded ? "−" : "+"}
-            </span>
-          </button>
-
-          {filtersExpanded && (
-            <div className="px-6 pb-6 space-y-4 border-t border-slate-600">
-              <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 border border-purple-500/30">
-                <div className="text-sm font-medium text-slate-300 mb-2">
-                  Overall Collection Progress
-                </div>
-                <div className="relative h-8 bg-slate-800 rounded-full overflow-hidden">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 flex items-center justify-center"
-                    style={{ width: `${overallCompletion.percent}%` }}>
-                    {overallCompletion.percent > 10 && (
-                      <span className="text-xs font-bold text-white">
-                        {overallCompletion.percent}%
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="text-sm text-slate-400 mt-2 text-center">
-                  {overallCompletion.collected} / {overallCompletion.total}{" "}
-                  items
+        <div className="sticky top-4 z-10 space-y-4">
+          {/* Overall Completion - Always Visible */}
+          <div className="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl">
+            <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 border border-purple-500/30">
+              <div className="text-sm font-medium text-slate-300 mb-2">
+                Overall Collection Progress
+              </div>
+              <div className="relative h-8 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 flex items-center justify-center"
+                  style={{ width: `${overallCompletion.percent}%` }}>
+                  {overallCompletion.percent > 10 && (
+                    <span className="text-xs font-bold text-white">
+                      {overallCompletion.percent}%
+                    </span>
+                  )}
                 </div>
               </div>
-
-              {/* Filters */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Hero Class Dropdown */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Hero Class
-                  </label>
-                  <select
-                    value={selectedHero}
-                    onChange={(e) => setSelectedHero(e.target.value)}
-                    className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
-                    {heroClasses.map((hero) => (
-                      <option key={hero} value={hero}>
-                        {hero}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Options Filter */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Options Count
-                  </label>
-                  <select
-                    value={optionsFilter}
-                    onChange={(e) => setOptionsFilter(e.target.value)}
-                    className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
-                    <option value="All">All</option>
-                    <option value="0">0 Options (None)</option>
-                    <option value="2">2 Options</option>
-                    <option value="3">3 Options</option>
-                  </select>
-                </div>
-
-                {/* Hide Collected Toggle */}
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
-                    Display Options
-                  </label>
-                  <button
-                    onClick={() => setHideCollected(!hideCollected)}
-                    className={`w-full px-4 py-3 rounded-lg font-medium transition-all ${
-                      hideCollected
-                        ? "bg-purple-600 hover:bg-purple-700 text-white"
-                        : "bg-slate-800/90 hover:bg-slate-700 border border-purple-500/30 text-white"
-                    }`}>
-                    {hideCollected ? "✓ Hiding Collected" : "Show All Items"}
-                  </button>
-                </div>
-              </div>
-
-              {/* Set Completion Overview - Collapsible */}
-              <div className="bg-gradient-to-r from-slate-800/95 to-slate-700/95 backdrop-blur-sm rounded-xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/20 transition-all">
-                <button
-                  onClick={() => setOverviewExpanded(!overviewExpanded)}
-                  className="w-full flex items-center justify-between text-left p-6">
-                  <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    📊 Set Completion Overview
-                  </h3>
-                  <span className="text-slate-400 text-2xl font-bold">
-                    {overviewExpanded ? "−" : "+"}
-                  </span>
-                </button>
-
-                {overviewExpanded && (
-                  <div className="px-6 pb-6 pt-2 border-t border-slate-600">
-                    {Object.keys(completionGroups)
-                      .sort((a, b) => Number(b) - Number(a))
-                      .map((percent: string) => (
-                        <div key={percent} className="mb-4">
-                          <div className="text-slate-300 font-semibold mb-2">
-                            {percent}% Complete:
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {completionGroups[String(percent)].map(
-                              (name: string, index: number) => (
-                                <button
-                                  key={index}
-                                  onClick={() => handleSetClick(name)}
-                                  className="px-3 py-1.5 bg-slate-700 hover:bg-purple-600 text-white text-sm rounded cursor-pointer transition-all hover:scale-105 active:scale-95">
-                                  {name}
-                                </button>
-                              )
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Search Input */}
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
-                  🔍 Search Collection
-                </label>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search by set or piece name..."
-                    className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-                  />
-                </div>
+              <div className="text-sm text-slate-400 mt-2 text-center">
+                {overallCompletion.collected} / {overallCompletion.total} items
               </div>
             </div>
-          )}
+          </div>
+
+          {/* Collapsible Filters */}
+          <div className="bg-slate-900/80 backdrop-blur-md rounded-xl border border-purple-500/30 shadow-xl">
+            <button
+              onClick={() => setFiltersExpanded(!filtersExpanded)}
+              className="w-full flex items-center justify-between text-left p-6">
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                🎛️ Filters
+              </h3>
+              <span className="text-slate-400 text-2xl font-bold">
+                {filtersExpanded ? "−" : "+"}
+              </span>
+            </button>
+
+            {filtersExpanded && (
+              <div className="px-6 pb-6 space-y-4 border-t border-slate-600">
+                {/* Filters Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Hero Class Dropdown */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Hero Class
+                    </label>
+                    <select
+                      value={selectedHero}
+                      onChange={(e) => setSelectedHero(e.target.value)}
+                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
+                      {heroClasses.map((hero) => (
+                        <option key={hero} value={hero}>
+                          {hero}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Options Filter */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Options Count
+                    </label>
+                    <select
+                      value={optionsFilter}
+                      onChange={(e) => setOptionsFilter(e.target.value)}
+                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
+                      <option value="All">All</option>
+                      <option value="0">0 Options (None)</option>
+                      <option value="2">2 Options</option>
+                      <option value="3">3 Options</option>
+                    </select>
+                  </div>
+
+                  {/* Hide Collected Toggle */}
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Display Options
+                    </label>
+                    <button
+                      onClick={() => setHideCollected(!hideCollected)}
+                      className={`w-full px-4 py-3 rounded-lg font-medium transition-all ${
+                        hideCollected
+                          ? "bg-purple-600 hover:bg-purple-700 text-white"
+                          : "bg-slate-800/90 hover:bg-slate-700 border border-purple-500/30 text-white"
+                      }`}>
+                      {hideCollected ? "✓ Hiding Collected" : "Show All Items"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Set Completion Overview */}
+                <div className="bg-gradient-to-r from-slate-800/95 to-slate-700/95 backdrop-blur-sm rounded-xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/20 transition-all">
+                  <button
+                    onClick={() => setOverviewExpanded(!overviewExpanded)}
+                    className="w-full flex items-center justify-between text-left p-6">
+                    <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                      📊 Set Completion Overview
+                    </h3>
+                    <span className="text-slate-400 text-2xl font-bold">
+                      {overviewExpanded ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {overviewExpanded && (
+                    <div className="px-6 pb-6 pt-2 border-t border-slate-600">
+                      {Object.keys(completionGroups)
+                        .sort((a, b) => Number(b) - Number(a))
+                        .map((percent: string) => (
+                          <div key={percent} className="mb-4">
+                            <div className="text-slate-300 font-semibold mb-2">
+                              {percent}% Complete:
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {completionGroups[String(percent)].map(
+                                (name: string, index: number) => (
+                                  <button
+                                    key={index}
+                                    onClick={() => handleSetClick(name)}
+                                    className="px-3 py-1.5 bg-slate-700 hover:bg-purple-600 text-white text-sm rounded cursor-pointer transition-all hover:scale-105 active:scale-95">
+                                    {name}
+                                  </button>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Search - Always Visible */}
+          <div className="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl">
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              🔍 Search Collection
+            </label>
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search by set or piece name..."
+                className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Results */}
