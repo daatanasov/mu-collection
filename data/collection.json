@@ -260,8 +260,8 @@
           "Increase Maximum SD",
           "Defense Success Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Tonio mule"
       },
       "Pants": {
         "options": [
@@ -517,8 +517,8 @@
           "Reflect Damage",
           "Increase Maximum Life"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Tonio"
       },
       "Boots": {
         "options": [
@@ -1060,7 +1060,7 @@
           "Increase Zen Drop Rate"
         ],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "tonio-bank"
       },
       "Gloves": {
         "options": [
@@ -1076,7 +1076,7 @@
           "Damage Decrease"
         ],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "tonio-bank"
       }
     },
     "Grand Soul": {
@@ -1202,25 +1202,19 @@
         "collectedPlace": "Bogihuq2"
       }
     },
-    "Hades Set": {
-      "Helm": {
-        "options": [
-          "None"
-        ],
-        "collected": true,
-        "collectedPlace": "TonColl"
-      },
+    "Phantom Set": {
       "Armor": {
         "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate"
+          "Damage Decrease",
+          "Increase Zen Drop Rate"
         ],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collected": false,
+        "collectedPlace": null
       },
       "Pants": {
         "options": [
-          "None"
+          "Damage Decrease",
+          "Reflect Damage"
         ],
         "collected": true,
         "collectedPlace": "TonColl"
@@ -1230,13 +1224,12 @@
           "Increase Maximum Life",
           "Defense Success Rate"
         ],
-        "collected": true,
-        "collectedPlace": "TonColl"
+        "collected": false,
+        "collectedPlace": null
       },
       "Boots": {
         "options": [
-          "Increase Maximum SD",
-          "Reflect Damage"
+          "None"
         ],
         "collected": true,
         "collectedPlace": "Bogihuq2"
@@ -1718,8 +1711,8 @@
           "Increase Maximum Life",
           "Damage Decrease"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Tonio-mule"
       },
       "Armor": {
         "options": [
