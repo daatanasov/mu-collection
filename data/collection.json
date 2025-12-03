@@ -62,33 +62,6 @@
         "collectedPlace": "Bogihuq2"
       }
     },
-    "Dragon Set": {
-      "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Armor": {
-        "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
-        "collected": true,
-        "collectedPlace": "TonColl"
-      },
-      "Pants": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": true,
-        "collectedPlace": "Dyrta"
-      },
-      "Gloves": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "dd"
-      },
-      "Boots": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "Dyrta"
-      }
-    },
     "Black Dragon Set": {
       "Helm": {
         "options": ["Increase Maximum Life", "Damage Decrease"],
@@ -1134,33 +1107,6 @@
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": true,
         "collectedPlace": "TonColl"
-      }
-    },
-    "Wind Set": {
-      "Helm": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
-        "collected": true,
-        "collectedPlace": "Dyrta"
-      },
-      "Armor": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Pants": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
-        "collected": true,
-        "collectedPlace": "TonColl"
-      },
-      "Boots": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
       }
     },
     "Spirit Set": {
