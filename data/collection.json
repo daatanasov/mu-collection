@@ -530,7 +530,7 @@
           "Increase Maximum SD",
           "Reflect Damage"
         ],
-        "collected": false,
+        "collected": true,
         "collectedPlace": null
       },
       "Pants": {
@@ -1457,7 +1457,7 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": false,
+        "collected": true,
         "collectedPlace": null
       },
       "Gloves": {
