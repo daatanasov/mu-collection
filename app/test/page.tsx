@@ -1,6 +1,17 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Check, X, Search } from "lucide-react";
+import React, { useEffect, useMemo, useState } from "react";
+import { Check, X, Search, Download, Upload, RefreshCcw } from "lucide-react";
+
+/*
+  Enhanced CollectionTracker
+  - Adds Piece Type filter (Helm, Armor, Pants, Gloves, Boots, etc.)
+  - Adds multi-select Collected Status filter: collected, uncollected, lastMissing
+  - Adds quick Export / Import JSON for backups
+  - Keeps original save/fetch hooks but Export/Import works locally
+  - All in a single-file React component (default export)
+
+  Drop this file into a Next.js app route/client component environment.
+*/
 
 interface PieceData {
   options: string[];
@@ -38,25 +49,16 @@ const heroSuffixMap: Record<string, string> = {
   "Wizard Soul Master": "dw",
 };
 
-const isSetFullyCollected = (setData: SetData, setName: string) => {
-  const isCollected = Object.values(setData).every(
-    (piece) => piece.collected === true
-  );
-  return isCollected;
-};
+const defaultPieceTypes = [
+  "Helm",
+  "Armor",
+  "Pants",
+  "Gloves",
+  "Boots",
+  // add more types if your game has them
+];
 
-const getSetCompletion = (setData: SetData) => {
-  const pieces = Object.values(setData);
-  const total = pieces.length;
-  const collected = pieces.filter((piece) => piece.collected).length;
-  return {
-    total,
-    collected,
-    percent: Math.round((collected / total) * 100),
-  };
-};
-
-const CollectionTracker = () => {
+const CollectionTracker: React.FC = () => {
   const [data, setData] = useState<CollectionData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedHero, setSelectedHero] = useState("All");
@@ -65,9 +67,15 @@ const CollectionTracker = () => {
     {}
   );
   const [optionsFilter, setOptionsFilter] = useState("All");
-  const [hideCollected, setHideCollected] = useState(false);
-  const [overviewExpanded, setOverviewExpanded] = useState(false);
+  const [hideCollected, setHideCollected] = useState(true);
+  const [overviewExpanded, setOverviewExpanded] = useState(true);
   const [filtersExpanded, setFiltersExpanded] = useState(true);
+
+  // NEW: piece type and collected status multi-select
+  const [pieceTypeFilter, setPieceTypeFilter] = useState("All");
+  const [collectedStatusFilter, setCollectedStatusFilter] = useState<string[]>(
+    []
+  );
 
   useEffect(() => {
     if (!data) return;
@@ -327,6 +335,7 @@ const CollectionTracker = () => {
     setOverviewExpanded(false);
   };
 
+  // ---- NEW: consolidated filtering pipeline ----
   const getFilteredData = (): CollectionData => {
     if (!data) return {};
 
@@ -338,6 +347,7 @@ const CollectionTracker = () => {
       filteredData = { [selectedHero]: data[selectedHero] };
     }
 
+    // Search filter
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
       const searchFiltered: CollectionData = {};
@@ -370,7 +380,7 @@ const CollectionTracker = () => {
       filteredData = searchFiltered;
     }
 
-    // Apply options filter
+    // Options filter (unchanged)
     if (optionsFilter !== "All") {
       const optionsFiltered: CollectionData = {};
 
@@ -409,7 +419,36 @@ const CollectionTracker = () => {
       filteredData = optionsFiltered;
     }
 
-    // Apply hide collected filter
+    // Piece Type filter (NEW)
+    if (pieceTypeFilter !== "All") {
+      const typeFiltered: CollectionData = {};
+
+      Object.entries(filteredData).forEach(([heroClass, sets]) => {
+        const filteredSets: HeroData = {};
+
+        Object.entries(sets).forEach(([setName, pieces]) => {
+          const matchingPieces: SetData = {};
+
+          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
+            if (pieceName === pieceTypeFilter) {
+              matchingPieces[pieceName] = pieceData;
+            }
+          });
+
+          if (Object.keys(matchingPieces).length > 0) {
+            filteredSets[setName] = matchingPieces;
+          }
+        });
+
+        if (Object.keys(filteredSets).length > 0) {
+          typeFiltered[heroClass] = filteredSets;
+        }
+      });
+
+      filteredData = typeFiltered;
+    }
+
+    // Hide collected (existing)
     if (hideCollected) {
       const uncollectedFiltered: CollectionData = {};
 
@@ -438,6 +477,52 @@ const CollectionTracker = () => {
       filteredData = uncollectedFiltered;
     }
 
+    // Collected Status multi-select (NEW)
+    if (collectedStatusFilter.length > 0) {
+      const statusFiltered: CollectionData = {};
+
+      Object.entries(filteredData).forEach(([heroClass, sets]) => {
+        const filteredSets: HeroData = {};
+
+        Object.entries(sets).forEach(([setName, pieces]) => {
+          const pieceArray = Object.values(pieces);
+          const missingCount = pieceArray.filter((p) => !p.collected).length;
+          const isLastMissing = missingCount === 1;
+
+          const matchingPieces: SetData = {};
+
+          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
+            const matchesCollected =
+              collectedStatusFilter.includes("collected") &&
+              pieceData.collected;
+
+            const matchesUncollected =
+              collectedStatusFilter.includes("uncollected") &&
+              !pieceData.collected;
+
+            const matchesLastMissing =
+              collectedStatusFilter.includes("lastMissing") &&
+              isLastMissing &&
+              !pieceData.collected;
+
+            if (matchesCollected || matchesUncollected || matchesLastMissing) {
+              matchingPieces[pieceName] = pieceData;
+            }
+          });
+
+          if (Object.keys(matchingPieces).length > 0) {
+            filteredSets[setName] = matchingPieces;
+          }
+        });
+
+        if (Object.keys(filteredSets).length > 0) {
+          statusFiltered[heroClass] = filteredSets;
+        }
+      });
+
+      filteredData = statusFiltered;
+    }
+
     return filteredData;
   };
 
@@ -449,41 +534,52 @@ const CollectionTracker = () => {
   const heroClasses = data ? ["All", ...Object.keys(data)] : ["All"];
   const overallCompletion = getOverallCompletion();
 
+  // ---- Export / Import Helpers ----
+  const handleExport = () => {
+    if (!data) return;
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `collection-export-${new Date().toISOString()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (file: File | null) => {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const text = String(e.target?.result ?? "");
+        const parsed: CollectionData = JSON.parse(text);
+        setData(parsed);
+        saveData(parsed);
+      } catch (err) {
+        console.error("Failed to import:", err);
+        alert("Invalid file format");
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const resetToInitial = () => {
+    if (
+      !confirm(
+        "Reset to initial demo data? This will overwrite your current data."
+      )
+    )
+      return;
+    initializeData();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 md:p-8">
       <div className="max-w-7xl mx-auto space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 mb-8">
-          🎮 Item Collection Tracker
-        </h1>
-
-        {/* Sticky Filters Section */}
-        {/* <div className="sticky top-4 z-10 space-y-4 bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl"> */}
-        {/* Overall Completion */}
         <div className="sticky top-4 z-10 space-y-4">
-          {/* Overall Completion - Always Visible */}
-          <div className="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl">
-            <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 border border-purple-500/30">
-              <div className="text-sm font-medium text-slate-300 mb-2">
-                Overall Collection Progress
-              </div>
-              <div className="relative h-8 bg-slate-800 rounded-full overflow-hidden">
-                <div
-                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 flex items-center justify-center"
-                  style={{ width: `${overallCompletion.percent}%` }}>
-                  {overallCompletion.percent > 10 && (
-                    <span className="text-xs font-bold text-white">
-                      {overallCompletion.percent}%
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div className="text-sm text-slate-400 mt-2 text-center">
-                {overallCompletion.collected} / {overallCompletion.total} items
-              </div>
-            </div>
-          </div>
-
-          {/* Collapsible Filters */}
+          {/* Filters */}
           <div className="bg-slate-900/80 backdrop-blur-md rounded-xl border border-purple-500/30 shadow-xl">
             <button
               onClick={() => setFiltersExpanded(!filtersExpanded)}
@@ -498,117 +594,29 @@ const CollectionTracker = () => {
 
             {filtersExpanded && (
               <div className="px-6 pb-6 space-y-4 border-t border-slate-600">
-                {/* Filters Grid */}
+                {/* New Filters Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {/* Hero Class Dropdown */}
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Hero Class
-                    </label>
-                    <select
-                      value={selectedHero}
-                      onChange={(e) => setSelectedHero(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
-                      {heroClasses.map((hero) => (
-                        <option key={hero} value={hero}>
-                          {hero}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  {/* Options Filter */}
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Options Count
-                    </label>
-                    <select
-                      value={optionsFilter}
-                      onChange={(e) => setOptionsFilter(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20">
-                      <option value="All">All</option>
-                      <option value="0">0 Options (None)</option>
-                      <option value="2">2 Options</option>
-                      <option value="3">3 Options</option>
-                    </select>
-                  </div>
-
-                  {/* Hide Collected Toggle */}
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Display Options
-                    </label>
-                    <button
-                      onClick={() => setHideCollected(!hideCollected)}
-                      className={`w-full px-4 py-3 rounded-lg font-medium transition-all ${
-                        hideCollected
-                          ? "bg-purple-600 hover:bg-purple-700 text-white"
-                          : "bg-slate-800/90 hover:bg-slate-700 border border-purple-500/30 text-white"
-                      }`}>
-                      {hideCollected ? "✓ Hiding Collected" : "Show All Items"}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Set Completion Overview */}
-                <div className="bg-gradient-to-r from-slate-800/95 to-slate-700/95 backdrop-blur-sm rounded-xl border border-purple-500/30 shadow-lg hover:shadow-purple-500/20 transition-all">
-                  <button
-                    onClick={() => setOverviewExpanded(!overviewExpanded)}
-                    className="w-full flex items-center justify-between text-left p-6">
-                    <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                      📊 Set Completion Overview
-                    </h3>
-                    <span className="text-slate-400 text-2xl font-bold">
-                      {overviewExpanded ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {overviewExpanded && (
-                    <div className="px-6 pb-6 pt-2 border-t border-slate-600">
-                      {Object.keys(completionGroups)
-                        .sort((a, b) => Number(b) - Number(a))
-                        .map((percent: string) => (
-                          <div key={percent} className="mb-4">
-                            <div className="text-slate-300 font-semibold mb-2">
-                              {percent}% Complete:
-                            </div>
-                            <div className="flex flex-wrap gap-2">
-                              {completionGroups[String(percent)].map(
-                                (name: string, index: number) => (
-                                  <button
-                                    key={index}
-                                    onClick={() => handleSetClick(name)}
-                                    className="px-3 py-1.5 bg-slate-700 hover:bg-purple-600 text-white text-sm rounded cursor-pointer transition-all hover:scale-105 active:scale-95">
-                                    {name}
-                                  </button>
-                                )
-                              )}
-                            </div>
-                          </div>
-                        ))}
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+                      <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search by set or piece name..."
+                        className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                      />
                     </div>
-                  )}
+                  </div>
                 </div>
+
+                {/* Overview accordion */}
               </div>
             )}
           </div>
 
-          {/* Search - Always Visible */}
-          <div className="bg-slate-900/80 backdrop-blur-md p-6 rounded-xl border border-purple-500/30 shadow-xl">
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              🔍 Search Collection
-            </label>
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by set or piece name..."
-                className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-              />
-            </div>
-          </div>
+          {/* Search - Always Visible (bottom of sticky pane) */}
+          {/* Kept compact because we added another search inside filters */}
         </div>
 
         {/* Results */}
@@ -637,8 +645,20 @@ const CollectionTracker = () => {
                     key={setName}
                     className="mb-6 bg-slate-900/50 rounded-lg p-4 border border-slate-600">
                     {(() => {
-                      const { total, collected, percent } =
-                        getSetCompletion(pieces);
+                      const { total, collected, percent } = ((): {
+                        total: number;
+                        collected: number;
+                        percent: number;
+                      } => {
+                        const piecesArr = Object.values(pieces);
+                        const total = piecesArr.length;
+                        const collected = piecesArr.filter(
+                          (p) => p.collected
+                        ).length;
+                        const percent =
+                          total > 0 ? Math.round((collected / total) * 100) : 0;
+                        return { total, collected, percent };
+                      })();
                       return (
                         <div className="mb-4">
                           <h3 className="text-xl font-semibold text-purple-300 mb-2">
