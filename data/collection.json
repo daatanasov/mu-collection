@@ -1,53 +1,20 @@
 {
   "Blade Knight": {
     "Bronze Set": {
-      "Helm": {
-        "options": [
-          "Damage Decrease",
-          "Increase Maximum Life",
-          "Increase Maximum SD"
-        ],
-        "collected": true,
-        "collectedPlace": "Tonio-bank"
-      },
       "Pants": {
         "options": ["Increase Maximum Life", "Damage Decrease"],
         "collected": true,
         "collectedPlace": "dd"
-      },
-      "Boots": {
-        "options": ["None", "luck"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2 and dd"
-      }
-    },
-    "Brass Set": {
-      "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Black Dragon Set": {
       "Pants": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
-      "Gloves": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta-none"
       },
       "Boots": {
         "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Dark Phoenix Set": {
-      "Armor": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": null
       }
@@ -56,7 +23,7 @@
       "Armor": {
         "options": ["Increase Maximum Life", "Reflect Damage"],
         "collected": true,
-        "collectedPlace": "TonColl"
+        "collectedPlace": "Kosta"
       },
       "Pants": {
         "options": [
@@ -86,15 +53,6 @@
         ],
         "collected": true,
         "collectedPlace": "Bogihuq2"
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Tonio-bank"
       }
     },
     "Brilliant Knight Set": {
@@ -182,11 +140,6 @@
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": true,
-        "collectedPlace": "Tonio-Bank"
       }
     }
   },
@@ -231,7 +184,7 @@
       "Armor": {
         "options": ["Increase Maximum Life", "Defense Success Rate"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta"
       },
       "Pants": {
         "options": [
@@ -245,7 +198,7 @@
       "Boots": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta"
       }
     },
     "Manticore Magic Set": {
@@ -270,15 +223,10 @@
       "Gloves": {
         "options": ["Increase Maximum SD", "Defense Success Rate"],
         "collected": true,
-        "collectedPlace": "DyrtaKurva"
+        "collectedPlace": "Kosta"
       }
     },
     "Brilliant Magic Set": {
-      "Armor": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
-        "collected": true,
-        "collectedPlace": null
-      },
       "Pants": {
         "options": [
           "Increase Maximum Life",
@@ -329,15 +277,6 @@
       }
     },
     "Lightning Magic Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Tonio-bank"
-      },
       "Pants": {
         "options": [
           "Increase Maximum SD",
@@ -369,15 +308,6 @@
   },
   "Rage Fighter": {
     "Phoenix Soul": {
-      "Helm": {
-        "options": [
-          "Increase Maximum SD",
-          "Damage Decrease",
-          "Defense Success Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Tonio-bank"
-      },
       "Armor": {
         "options": [
           "Damage Decrease",
@@ -401,7 +331,7 @@
       "Boots": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Toncoll"
+        "collectedPlace": "Toncoll and kosta"
       }
     },
     "Manticore Fighter Set": {
@@ -432,16 +362,6 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Pants": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": true,
-        "collectedPlace": "Tonio-bank"
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": false,
         "collectedPlace": null
       }
@@ -512,12 +432,12 @@
       "Helm": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta-none"
       },
       "Armor": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Dyrtakurva"
+        "collectedPlace": "Kosta-none"
       },
       "Pants": {
         "options": ["None"],
@@ -547,12 +467,12 @@
       "Armor": {
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": true,
-        "collectedPlace": "DyrtaKurva"
+        "collectedPlace": "Kosta"
       },
       "Pants": {
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": true,
-        "collectedPlace": "DyrtaKurva"
+        "collectedPlace": "Kosta"
       },
       "Boots": {
         "options": [
@@ -581,11 +501,6 @@
       }
     },
     "Dark Soul Set": {
-      "Helm": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
       "Armor": {
         "options": [
           "Increase Maximum Life",
@@ -594,16 +509,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Pants": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "DyrtaKurva"
-      },
-      "Gloves": {
-        "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": true,
-        "collectedPlace": "Tonio-sho-bank"
       }
     },
     "Venom Mist": {
@@ -641,7 +546,7 @@
       "Pants": {
         "options": ["Damage Decrease", "Reflect Damage"],
         "collected": true,
-        "collectedPlace": "TonColl"
+        "collectedPlace": "Kosta"
       },
       "Gloves": {
         "options": ["Increase Maximum Life", "Defense Success Rate"],
@@ -651,7 +556,7 @@
       "Boots": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta-none"
       }
     },
     "Manticore Wizard Set": {
@@ -679,11 +584,6 @@
           "Reflect Damage",
           "Defense Success Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
         "collected": false,
         "collectedPlace": null
       },
@@ -799,15 +699,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "tonio"
       }
     }
   },
@@ -825,19 +716,10 @@
       "Gloves": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Bogihuq2 and kosta"
       }
     },
     "Spirit Set": {
-      "Pants": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Reflect Damage",
@@ -870,15 +752,10 @@
       }
     },
     "Red Spirit Set": {
-      "Armor": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "Bogihuq2"
-      },
       "Gloves": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "DyrtaKurva"
+        "collectedPlace": "Kosta-none"
       },
       "Boots": {
         "options": [
@@ -895,11 +772,6 @@
         "options": ["Increase Maximum Life", "Damage Decrease"],
         "collected": false,
         "collectedPlace": null
-      },
-      "Pants": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
-        "collected": true,
-        "collectedPlace": "Tonio-bank"
       }
     },
     "Manticore Elf Set": {
@@ -949,11 +821,6 @@
       }
     },
     "Apocalypse Elf Set": {
-      "Helm": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Armor": {
         "options": [
           "Increase Maximum Life",
@@ -1095,12 +962,12 @@
       "Armor": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "DyrtaKurva"
+        "collectedPlace": "Kosta-none"
       },
       "Pants": {
         "options": ["None"],
         "collected": true,
-        "collectedPlace": "DyrtaKurva"
+        "collectedPlace": "Kosta-none"
       },
       "Gloves": {
         "options": [
@@ -1114,7 +981,7 @@
       "Boots": {
         "options": ["Increase Maximum Life", "Increase Zen Drop Rate"],
         "collected": true,
-        "collectedPlace": "TonColl Kurva"
+        "collectedPlace": "Kosta"
       }
     },
     "Royal Set": {
@@ -1168,7 +1035,7 @@
       "Armor": {
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta"
       },
       "Pants": {
         "options": ["Defense Success Rate", "Increase Zen Drop Rate"],
@@ -1256,11 +1123,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": true,
-        "collectedPlace": "tonio"
-      },
       "Pants": {
         "options": [
           "Increase Maximum SD",
@@ -1295,11 +1157,6 @@
       }
     },
     "Ancient Set": {
-      "Helm": {
-        "options": ["None"],
-        "collected": true,
-        "collectedPlace": "DyrtaKurva"
-      },
       "Gloves": {
         "options": [
           "Increase Maximum Life",
@@ -1314,7 +1171,7 @@
       "Helm": {
         "options": ["Reflect Damage", "Increase Zen Drop Rate"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta"
       },
       "Armor": {
         "options": [
@@ -1328,7 +1185,7 @@
       "Gloves": {
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": true,
-        "collectedPlace": "Bogihuq2"
+        "collectedPlace": "Kosta"
       },
       "Boots": {
         "options": ["Increase Maximum Life", "Increase Maximum SD"],
