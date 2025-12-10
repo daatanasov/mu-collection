@@ -1,17 +1,6 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
-import { Check, X, Search, Download, Upload, RefreshCcw } from "lucide-react";
-
-/*
-  Enhanced CollectionTracker
-  - Adds Piece Type filter (Helm, Armor, Pants, Gloves, Boots, etc.)
-  - Adds multi-select Collected Status filter: collected, uncollected, lastMissing
-  - Adds quick Export / Import JSON for backups
-  - Keeps original save/fetch hooks but Export/Import works locally
-  - All in a single-file React component (default export)
-
-  Drop this file into a Next.js app route/client component environment.
-*/
+import React, { useEffect, useState } from "react";
+import { Check, X, Search } from "lucide-react";
 
 interface PieceData {
   options: string[];
@@ -49,15 +38,6 @@ const heroSuffixMap: Record<string, string> = {
   "Wizard Soul Master": "dw",
 };
 
-const defaultPieceTypes = [
-  "Helm",
-  "Armor",
-  "Pants",
-  "Gloves",
-  "Boots",
-  // add more types if your game has them
-];
-
 const CollectionTracker: React.FC = () => {
   const [data, setData] = useState<CollectionData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -66,16 +46,20 @@ const CollectionTracker: React.FC = () => {
   const [collectedSet, setCollectedSet] = useState<{ [key: string]: boolean }>(
     {}
   );
+
   const [optionsFilter, setOptionsFilter] = useState("All");
   const [hideCollected, setHideCollected] = useState(true);
+
   const [overviewExpanded, setOverviewExpanded] = useState(true);
   const [filtersExpanded, setFiltersExpanded] = useState(true);
 
-  // NEW: piece type and collected status multi-select
   const [pieceTypeFilter, setPieceTypeFilter] = useState("All");
   const [collectedStatusFilter, setCollectedStatusFilter] = useState<string[]>(
     []
   );
+
+  // NEW: Hide special sets checkbox
+  const [hideSpecialSets, setHideSpecialSets] = useState(false);
 
   useEffect(() => {
     if (!data) return;
@@ -91,51 +75,6 @@ const CollectionTracker: React.FC = () => {
     });
     setCollectedSet(newCollected);
   }, [data]);
-
-  const getAllSetCompletion = () => {
-    if (!data) return {};
-
-    const result: { [percent: number]: string[] } = {};
-    Object.entries(data).forEach(([heroClass, heroSets]) => {
-      Object.entries(heroSets).forEach(([setName, setData]) => {
-        const pieces = Object.values(setData);
-        const total = pieces.length;
-        const collected = pieces.filter((p) => p.collected).length;
-        const percent = Math.round((collected / total) * 100);
-        const suffix = heroSuffixMap[heroClass] ?? "";
-        const labeledName = `${setName}-${suffix}`;
-
-        if (!result[percent]) result[percent] = [];
-        result[percent].push(labeledName);
-      });
-    });
-
-    return result;
-  };
-
-  const getOverallCompletion = () => {
-    if (!data) return { total: 0, collected: 0, percent: 0 };
-
-    let totalPieces = 0;
-    let collectedPieces = 0;
-
-    Object.values(data).forEach((heroSets) => {
-      Object.values(heroSets).forEach((setData) => {
-        const pieces = Object.values(setData);
-        totalPieces += pieces.length;
-        collectedPieces += pieces.filter((p) => p.collected).length;
-      });
-    });
-
-    return {
-      total: totalPieces,
-      collected: collectedPieces,
-      percent:
-        totalPieces > 0 ? Math.round((collectedPieces / totalPieces) * 100) : 0,
-    };
-  };
-
-  const completionGroups: Record<string, string[]> = getAllSetCompletion();
 
   const fetchData = async () => {
     try {
@@ -188,41 +127,6 @@ const CollectionTracker: React.FC = () => {
             collectedPlace: null,
           },
         },
-        "Bronze Set": {
-          Helm: {
-            options: [
-              "Damage Decrease",
-              "Increase Maximum Life",
-              "Increase Maximum SD",
-            ],
-            collected: false,
-            collectedPlace: null,
-          },
-          Armor: {
-            options: ["None"],
-            collected: false,
-            collectedPlace: null,
-          },
-          Pants: {
-            options: ["Increase Maximum Life", "Damage Decrease"],
-            collected: false,
-            collectedPlace: null,
-          },
-          Gloves: {
-            options: [
-              "Increase Maximum Life",
-              "Increase Maximum SD",
-              "Defense Success Rate",
-            ],
-            collected: false,
-            collectedPlace: null,
-          },
-          Boots: {
-            options: ["None", "luck"],
-            collected: false,
-            collectedPlace: null,
-          },
-        },
       },
       "Magic Gladiator": {
         "Storm Crow Set": {
@@ -243,36 +147,6 @@ const CollectionTracker: React.FC = () => {
           },
           Boots: {
             options: ["Increase Maximum SD", "Increase Zen Drop Rate"],
-            collected: false,
-            collectedPlace: null,
-          },
-        },
-        "Thunder Hawk Set": {
-          Armor: {
-            options: [
-              "Increase Maximum Life",
-              "Reflect Damage",
-              "Defense Success Rate",
-            ],
-            collected: false,
-            collectedPlace: null,
-          },
-          Pants: {
-            options: [
-              "Increase Maximum SD",
-              "Defense Success Rate",
-              "Increase Zen Drop Rate",
-            ],
-            collected: false,
-            collectedPlace: null,
-          },
-          Gloves: {
-            options: ["None"],
-            collected: false,
-            collectedPlace: null,
-          },
-          Boots: {
-            options: ["Increase Maximum Life", "Reflect Damage"],
             collected: false,
             collectedPlace: null,
           },
@@ -329,25 +203,18 @@ const CollectionTracker: React.FC = () => {
     saveData(newData);
   };
 
-  const handleSetClick = (labeledName: string) => {
-    const setNameWithoutSuffix = labeledName.split("-").slice(0, -1).join("-");
-    setSearchQuery(setNameWithoutSuffix);
-    setOverviewExpanded(false);
-  };
-
-  // ---- NEW: consolidated filtering pipeline ----
   const getFilteredData = (): CollectionData => {
     if (!data) return {};
 
     let filteredData: CollectionData = {};
 
-    if (selectedHero === "All") {
-      filteredData = { ...data };
-    } else {
-      filteredData = { [selectedHero]: data[selectedHero] };
-    }
+    // hero filter
+    filteredData =
+      selectedHero === "All"
+        ? { ...data }
+        : { [selectedHero]: data[selectedHero] };
 
-    // Search filter
+    // search filter
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
       const searchFiltered: CollectionData = {};
@@ -359,15 +226,15 @@ const CollectionTracker: React.FC = () => {
           if (setName.toLowerCase().includes(query)) {
             matchingSets[setName] = pieces;
           } else {
-            const matchingPieces: SetData = {};
+            const matchedPieces: SetData = {};
             Object.entries(pieces).forEach(([pieceName, pieceData]) => {
               if (pieceName.toLowerCase().includes(query)) {
-                matchingPieces[pieceName] = pieceData;
+                matchedPieces[pieceName] = pieceData;
               }
             });
 
-            if (Object.keys(matchingPieces).length > 0) {
-              matchingSets[setName] = matchingPieces;
+            if (Object.keys(matchedPieces).length > 0) {
+              matchingSets[setName] = matchedPieces;
             }
           }
         });
@@ -380,75 +247,7 @@ const CollectionTracker: React.FC = () => {
       filteredData = searchFiltered;
     }
 
-    // Options filter (unchanged)
-    if (optionsFilter !== "All") {
-      const optionsFiltered: CollectionData = {};
-
-      Object.entries(filteredData).forEach(([heroClass, sets]) => {
-        const matchingSets: HeroData = {};
-
-        Object.entries(sets).forEach(([setName, pieces]) => {
-          const matchingPieces: SetData = {};
-
-          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
-            const optionCount =
-              pieceData.options.length === 1 && pieceData.options[0] === "None"
-                ? 0
-                : pieceData.options.length;
-
-            let matches = false;
-            if (optionsFilter === "0" && optionCount === 0) matches = true;
-            if (optionsFilter === "2" && optionCount === 2) matches = true;
-            if (optionsFilter === "3" && optionCount === 3) matches = true;
-
-            if (matches) {
-              matchingPieces[pieceName] = pieceData;
-            }
-          });
-
-          if (Object.keys(matchingPieces).length > 0) {
-            matchingSets[setName] = matchingPieces;
-          }
-        });
-
-        if (Object.keys(matchingSets).length > 0) {
-          optionsFiltered[heroClass] = matchingSets;
-        }
-      });
-
-      filteredData = optionsFiltered;
-    }
-
-    // Piece Type filter (NEW)
-    if (pieceTypeFilter !== "All") {
-      const typeFiltered: CollectionData = {};
-
-      Object.entries(filteredData).forEach(([heroClass, sets]) => {
-        const filteredSets: HeroData = {};
-
-        Object.entries(sets).forEach(([setName, pieces]) => {
-          const matchingPieces: SetData = {};
-
-          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
-            if (pieceName === pieceTypeFilter) {
-              matchingPieces[pieceName] = pieceData;
-            }
-          });
-
-          if (Object.keys(matchingPieces).length > 0) {
-            filteredSets[setName] = matchingPieces;
-          }
-        });
-
-        if (Object.keys(filteredSets).length > 0) {
-          typeFiltered[heroClass] = filteredSets;
-        }
-      });
-
-      filteredData = typeFiltered;
-    }
-
-    // Hide collected (existing)
+    // hide collected
     if (hideCollected) {
       const uncollectedFiltered: CollectionData = {};
 
@@ -456,16 +255,13 @@ const CollectionTracker: React.FC = () => {
         const matchingSets: HeroData = {};
 
         Object.entries(sets).forEach(([setName, pieces]) => {
-          const matchingPieces: SetData = {};
-
+          const filteredPieces: SetData = {};
           Object.entries(pieces).forEach(([pieceName, pieceData]) => {
-            if (!pieceData.collected) {
-              matchingPieces[pieceName] = pieceData;
-            }
+            if (!pieceData.collected) filteredPieces[pieceName] = pieceData;
           });
 
-          if (Object.keys(matchingPieces).length > 0) {
-            matchingSets[setName] = matchingPieces;
+          if (Object.keys(filteredPieces).length > 0) {
+            matchingSets[setName] = filteredPieces;
           }
         });
 
@@ -477,50 +273,26 @@ const CollectionTracker: React.FC = () => {
       filteredData = uncollectedFiltered;
     }
 
-    // Collected Status multi-select (NEW)
-    if (collectedStatusFilter.length > 0) {
-      const statusFiltered: CollectionData = {};
+    // NEW: hide special sets
+    if (hideSpecialSets) {
+      const banned = ["manticore", "brilliant", "apocalypse", "lightning"];
+      const filteredBySetName: CollectionData = {};
 
       Object.entries(filteredData).forEach(([heroClass, sets]) => {
-        const filteredSets: HeroData = {};
+        const allowedSets: HeroData = {};
 
         Object.entries(sets).forEach(([setName, pieces]) => {
-          const pieceArray = Object.values(pieces);
-          const missingCount = pieceArray.filter((p) => !p.collected).length;
-          const isLastMissing = missingCount === 1;
-
-          const matchingPieces: SetData = {};
-
-          Object.entries(pieces).forEach(([pieceName, pieceData]) => {
-            const matchesCollected =
-              collectedStatusFilter.includes("collected") &&
-              pieceData.collected;
-
-            const matchesUncollected =
-              collectedStatusFilter.includes("uncollected") &&
-              !pieceData.collected;
-
-            const matchesLastMissing =
-              collectedStatusFilter.includes("lastMissing") &&
-              isLastMissing &&
-              !pieceData.collected;
-
-            if (matchesCollected || matchesUncollected || matchesLastMissing) {
-              matchingPieces[pieceName] = pieceData;
-            }
-          });
-
-          if (Object.keys(matchingPieces).length > 0) {
-            filteredSets[setName] = matchingPieces;
-          }
+          const lower = setName.toLowerCase();
+          const isBlocked = banned.some((b) => lower.includes(b));
+          if (!isBlocked) allowedSets[setName] = pieces;
         });
 
-        if (Object.keys(filteredSets).length > 0) {
-          statusFiltered[heroClass] = filteredSets;
+        if (Object.keys(allowedSets).length > 0) {
+          filteredBySetName[heroClass] = allowedSets;
         }
       });
 
-      filteredData = statusFiltered;
+      filteredData = filteredBySetName;
     }
 
     return filteredData;
@@ -531,214 +303,120 @@ const CollectionTracker: React.FC = () => {
   }
 
   const filteredData = getFilteredData();
-  const heroClasses = data ? ["All", ...Object.keys(data)] : ["All"];
-  const overallCompletion = getOverallCompletion();
-
-  // ---- Export / Import Helpers ----
-  const handleExport = () => {
-    if (!data) return;
-    const blob = new Blob([JSON.stringify(data, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `collection-export-${new Date().toISOString()}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleImport = (file: File | null) => {
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        const text = String(e.target?.result ?? "");
-        const parsed: CollectionData = JSON.parse(text);
-        setData(parsed);
-        saveData(parsed);
-      } catch (err) {
-        console.error("Failed to import:", err);
-        alert("Invalid file format");
-      }
-    };
-    reader.readAsText(file);
-  };
-
-  const resetToInitial = () => {
-    if (
-      !confirm(
-        "Reset to initial demo data? This will overwrite your current data."
-      )
-    )
-      return;
-    initializeData();
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 md:p-8">
       <div className="max-w-7xl mx-auto space-y-6">
-        <div className="sticky top-4 z-10 space-y-4">
-          {/* Filters */}
-          <div className="bg-slate-900/80 backdrop-blur-md rounded-xl border border-purple-500/30 shadow-xl">
-            <button
-              onClick={() => setFiltersExpanded(!filtersExpanded)}
-              className="w-full flex items-center justify-between text-left p-6">
-              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                🎛️ Filters
-              </h3>
-              <span className="text-slate-400 text-2xl font-bold">
-                {filtersExpanded ? "−" : "+"}
-              </span>
-            </button>
+        <div className="bg-slate-900/80 rounded-xl border border-purple-500/30 p-6">
+          <h3 className="text-xl font-bold text-purple-300 mb-4">Filters</h3>
 
-            {filtersExpanded && (
-              <div className="px-6 pb-6 space-y-4 border-t border-slate-600">
-                {/* New Filters Row */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Search by set or piece name..."
-                        className="w-full pl-10 pr-4 py-3 bg-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Overview accordion */}
-              </div>
-            )}
+          {/* NEW checkbox */}
+          <div className="flex items-center gap-2 mb-3">
+            <input
+              type="checkbox"
+              className="w-4 h-4"
+              checked={hideSpecialSets}
+              onChange={() => setHideSpecialSets(!hideSpecialSets)}
+            />
+            <label className="text-slate-300">
+              Hide Manticore / Brilliant / Apocalypse / Lightning
+            </label>
           </div>
 
-          {/* Search - Always Visible (bottom of sticky pane) */}
-          {/* Kept compact because we added another search inside filters */}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search..."
+              className="w-full pl-10 pr-4 py-3 bg-slate-800 border border-purple-500/30 rounded-lg text-white"
+            />
+          </div>
         </div>
 
         {/* Results */}
         {Object.keys(filteredData).length === 0 ? (
-          <div className="text-center py-16 bg-slate-800/50 rounded-xl border border-purple-500/30">
-            <div className="text-4xl mb-4">🔍</div>
-            <div className="text-xl text-slate-300 font-semibold mb-2">
-              No results found
-            </div>
-            <div className="text-slate-400">
-              Try adjusting your filters or search query
-            </div>
+          <div className="text-center text-white py-8">
+            No results match your filters.
           </div>
         ) : (
-          <>
-            {Object.entries(filteredData).map(([heroClass, sets]) => (
-              <div
-                key={heroClass}
-                className="bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6 shadow-lg">
-                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
-                  {heroClass}
-                </h2>
+          Object.entries(filteredData).map(([heroClass, sets]) => (
+            <div
+              key={heroClass}
+              className="bg-slate-800/50 border border-purple-500/30 p-6 rounded-xl">
+              <h2 className="text-3xl font-bold text-purple-300 mb-6">
+                {heroClass}
+              </h2>
 
-                {Object.entries(sets).map(([setName, pieces]) => (
-                  <div
-                    key={setName}
-                    className="mb-6 bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-                    {(() => {
-                      const { total, collected, percent } = ((): {
-                        total: number;
-                        collected: number;
-                        percent: number;
-                      } => {
-                        const piecesArr = Object.values(pieces);
-                        const total = piecesArr.length;
-                        const collected = piecesArr.filter(
-                          (p) => p.collected
-                        ).length;
-                        const percent =
-                          total > 0 ? Math.round((collected / total) * 100) : 0;
-                        return { total, collected, percent };
-                      })();
-                      return (
-                        <div className="mb-4">
-                          <h3 className="text-xl font-semibold text-purple-300 mb-2">
-                            {setName}
-                          </h3>
-                          <div className="text-sm text-slate-400">
-                            {collected}/{total} collected ({percent}%)
+              {Object.entries(sets).map(([setName, pieces]) => (
+                <div
+                  key={setName}
+                  className="mb-8 bg-slate-900/60 p-4 rounded-xl">
+                  <h3 className="text-xl text-white mb-2">{setName}</h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {Object.entries(pieces).map(([pieceName, pieceData]) => (
+                      <div
+                        key={pieceName}
+                        className={`p-4 rounded-lg border ${
+                          pieceData.collected
+                            ? "border-green-400 bg-green-900/20"
+                            : "border-slate-600 bg-slate-800/40"
+                        }`}>
+                        <div className="flex items-center justify-between">
+                          <div className="text-white font-semibold">
+                            {pieceName}
                           </div>
+
+                          <button
+                            onClick={() =>
+                              toggleCollected(heroClass, setName, pieceName)
+                            }
+                            className={`p-1 rounded ${
+                              pieceData.collected
+                                ? "bg-green-600"
+                                : "bg-slate-600"
+                            }`}>
+                            {pieceData.collected ? (
+                              <Check className="w-5 h-5 text-white" />
+                            ) : (
+                              <X className="w-5 h-5 text-white" />
+                            )}
+                          </button>
                         </div>
-                      );
-                    })()}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {Object.entries(pieces).map(([pieceName, pieceData]) => (
-                        <div
-                          key={pieceName}
-                          className={`p-3 rounded-lg border transition-all ${
-                            pieceData.collected
-                              ? "bg-green-900/20 border-green-500/30"
-                              : "bg-slate-800/50 border-slate-600"
-                          }`}>
-                          <div className="flex items-center justify-between mb-3">
-                            <h4 className="font-semibold text-white">
-                              {pieceName}
-                            </h4>
-                            <button
-                              onClick={() =>
-                                toggleCollected(heroClass, setName, pieceName)
-                              }
-                              className={`p-1 rounded ${
-                                pieceData.collected
-                                  ? "bg-green-600 hover:bg-green-700"
-                                  : "bg-slate-600 hover:bg-slate-500"
-                              }`}>
-                              {pieceData.collected ? (
-                                <Check className="w-5 h-5 text-white" />
-                              ) : (
-                                <X className="w-5 h-5 text-white" />
-                              )}
-                            </button>
-                          </div>
+                        {/* Options */}
+                        <ul className="text-slate-400 text-sm mt-3">
+                          {pieceData.options.map((opt, i) => (
+                            <li key={i}>• {opt}</li>
+                          ))}
+                        </ul>
 
-                          <div className="text-sm text-slate-300 mb-2">
-                            <strong>Options:</strong>
-                          </div>
-                          <ul className="text-sm text-slate-400 space-y-1">
-                            {pieceData.options.map((option, idx) => (
-                              <li key={idx}>• {option}</li>
-                            ))}
-                          </ul>
-
-                          {pieceData.collected && (
-                            <div className="mt-3">
-                              <label className="block text-sm text-slate-300 mb-1">
-                                Collected in:
-                              </label>
-                              <input
-                                type="text"
-                                value={pieceData.collectedPlace || ""}
-                                onChange={(e) =>
-                                  updateCollectedPlace(
-                                    heroClass,
-                                    setName,
-                                    pieceName,
-                                    e.target.value
-                                  )
-                                }
-                                placeholder="e.g., Hero 1, Warehouse..."
-                                className="w-full px-3 py-2 bg-slate-900/50 border border-slate-600 rounded text-white text-sm focus:outline-none focus:border-purple-500"
-                              />
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                        {/* Collected place */}
+                        {pieceData.collected && (
+                          <input
+                            type="text"
+                            value={pieceData.collectedPlace ?? ""}
+                            onChange={(e) =>
+                              updateCollectedPlace(
+                                heroClass,
+                                setName,
+                                pieceName,
+                                e.target.value
+                              )
+                            }
+                            placeholder="Collected in..."
+                            className="mt-3 w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded text-white text-sm"
+                          />
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            ))}
-          </>
+                </div>
+              ))}
+            </div>
+          ))
         )}
       </div>
     </div>
