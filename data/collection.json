@@ -981,7 +981,7 @@
           "Increase Zen Drop Rate"
         ],
         "collected": true,
-        "collectedPlace": null
+        "collectedPlace": "Tonio-bank"
       },
       "Gloves": {
         "options": [
@@ -1167,8 +1167,8 @@
           "Increase Maximum SD",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Tonio-bank"
       }
     },
     "Brilliant Summoner Set": {
