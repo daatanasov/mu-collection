@@ -1,0 +1,316 @@
+{
+  "Bronze Set": {
+    "Helm": {
+      "options": [
+        "Damage Decrease",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Damage Decrease",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Silk Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Violent Wind Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brass Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Damage Decrease"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Spirit Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Guardian Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Light Plate Set": {
+    "Pants": {
+      "options": [
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Black Dragon Set": {
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Defense Success Rate"
+      ],
+      "collected": true,
+      "collectedPlace": null
+    }
+  },
+  "Demonic Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Holy Spirit Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dark Phoenix Set": {
+    "Armor": {
+      "options": [
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate"
+      ],
+      "collected": true,
+      "collectedPlace": null
+    }
+  },
+  "Piercing Grove Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Red Spirit Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dark Soul Set": {
+    "Boots": {
+      "options": [
+        "Damage Decrease",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Great Dragon Set": {
+    "Armor": {
+      "options": [
+        "Increase Damage",
+        "Reflect Damage",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Hurricane Set": {
+    "Gloves": {
+      "options": [
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dragon Knight Set": {
+    "Pants": {
+      "options": [
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Defense Success Rate",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Venom Mist Set": {
+    "Pants": {
+      "options": [
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Divine Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Bloody Dragon Set": {
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  }
+}

@@ -1,0 +1,1147 @@
+{
+  "Sphinx Set": {
+    "Gloves": {
+      "options": ["Damage Decrease", "Reflect Damage", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum Life", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brass Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Red Winged Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Sacred Set": {
+    "Helm": {
+      "options": ["Increase Maximum Life", "Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Demonic Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Damage Decrease"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dark Phoenix Set": {
+    "Armor": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dark Steel Set": {
+    "Gloves": {
+      "options": ["Damage Decrease", "Reflect Damage", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Thunder Hawk Set": {
+    "Boots": {
+      "options": ["Increase Maximum Life", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Red Spirit Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Damage Decrease", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dark Master Set": {
+    "Mask": {
+      "options": ["Increase Maximum Life", "Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum Life", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Dark Soul Set": {
+    "Helm": {
+      "options": ["Increase Maximum Life", "Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum SD", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Hurricane Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brave Set": {
+    "Helm": {
+      "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum Life", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Hades Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum SD", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Sylphid Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Divine Set": {
+    "Helm": {
+      "options": ["Damage Decrease", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Damage Decrease",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Volcano Set": {
+    "Gloves": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Phantom Set": {
+    "Armor": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Damage Decrease", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Sunlight Set": {
+    "Mask": {
+      "options": ["Increase Maximum SD", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Increase Maximum Life", "Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum Life", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Royal Set": {
+    "Mask": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum Life", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Storm Blitz Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Damage Decrease"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Eternal Set": {
+    "Helm": {
+      "options": ["Damage Decrease", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Damage Decrease", "Reflect Damage", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Damage Decrease",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Bloody Dragon Set": {
+    "Pants": {
+      "options": ["Damage Decrease", "Reflect Damage", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Black Dragon Set": {
+    "Pants": {
+      "options": [
+        "Reflect Damage",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Increase Maximum Life", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Summoner Set": {
+    "Helm": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+
+  "Manticore Lord Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Leather Set": {
+    "Helm": {
+      "options": ["Increase Maximum SD", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Vine Set": {
+    "Armor": {
+      "options": ["Increase Maximum Life", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Bone Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Silk Set": {
+    "Gloves": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Bronze Set": {
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Wind Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Spirit Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Legendary Set": {
+    "Gloves": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Guardian Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Damage Decrease"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Defense Success Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Lightplate Set": {
+    "Helm": {
+      "options": ["Any"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Ancient Set": {
+    "Pants": {
+      "options": [
+        "Reflect Damage",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Adamantine Set": {
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Grand Soul Set": {
+    "Gloves": {
+      "options": ["Damage Decrease", "Reflect Damage", "Defense Success Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Piercing Grove Set": {
+    "Helm": {
+      "options": ["Increase Maximum SD", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Reflect Damage",
+        "Defense Success Rate",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Knight Set": {
+    "Helm": {
+      "options": [
+        "Damage Decrease",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Magic Set": {
+    "Armor": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Elf Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Wizard Set": {
+    "Helm": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Damage Decrease", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Fighter Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Damage Decrease",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Manticore Summ Set": {
+    "Helm": {
+      "options": ["Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brilliant Wizard Set": {
+    "Armor": {
+      "options": ["Increase Maximum Life", "Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum SD", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brilliant Lord Set": {
+    "Mask": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum SD", "Damage Decrease", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Damage Decrease", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brilliant Summ Set": {
+    "Helm": {
+      "options": ["Increase Maximum SD", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brilliant Knight Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum SD", "Reflect Damage"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Brilliant Magic Set": {
+    "Armor": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Damage Decrease",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Light Wizard Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Lightning Fighter Set": {
+    "Armor": {
+      "options": [
+        "Increase Maximum Life",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Light Elf Set": {
+    "Helm": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum SD",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum Life", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Increase Maximum SD",
+        "Damage Decrease",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Light Knight Set": {
+    "Helm": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Increase Maximum SD", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Reflect Damage", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Light Sum Set": {
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Apo Elf Set": {
+    "Helm": {
+      "options": ["Damage Decrease", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": [
+        "Damage Decrease",
+        "Reflect Damage",
+        "Increase Maximum Defense"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum SD",
+        "Reflect Damage"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum Life", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Damage Decrease", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Apo Knight Set": {
+    "Helm": {
+      "options": [
+        "Increase Maximum Life",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Armor": {
+      "options": ["Increase Maximum SD", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum Life", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": [
+        "Reflect Damage",
+        "Increase Maximum Defense",
+        "Increase Zen Drop Rate"
+      ],
+      "collected": false,
+      "collectedPlace": null
+    }
+  },
+  "Apo Summ Set": {
+    "Armor": {
+      "options": ["Damage Decrease", "Increase Zen Drop Rate"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Pants": {
+      "options": ["Increase Maximum SD", "Damage Decrease"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Gloves": {
+      "options": ["Increase Maximum SD", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    },
+    "Boots": {
+      "options": ["Increase Maximum SD", "Increase Maximum Defense"],
+      "collected": false,
+      "collectedPlace": null
+    }
+  }
+}
