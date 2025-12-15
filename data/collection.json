@@ -170,17 +170,6 @@
         "collectedPlace": null
       }
     },
-    "Brilliant Magic Set": {
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Apocalypse Magic Set": {
       "Armor": {
         "options": [
@@ -242,17 +231,6 @@
     }
   },
   "Rage Fighter": {
-    "Phoenix Soul": {
-      "Armor": {
-        "options": [
-          "Damage Decrease",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Bloody Dragon": {
       "Helm": {
         "options": [
@@ -531,11 +509,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Pants": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Damage Decrease",
@@ -810,15 +783,6 @@
       }
     },
     "Manticore Lord Set": {
-      "Helm": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Increase Maximum Life",
