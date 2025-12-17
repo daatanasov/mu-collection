@@ -1,12 +1,5 @@
 {
   "Blade Knight": {
-    "Black Dragon Set": {
-      "Boots": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Dragon Knight Set": {
       "Pants": {
         "options": [
@@ -37,15 +30,6 @@
       },
       "Armor": {
         "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -808,11 +792,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Gloves": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": ["Increase Maximum Life", "Increase Maximum SD"],
         "collected": false,
@@ -873,11 +852,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": [
           "Increase Maximum SD",
@@ -913,13 +887,6 @@
           "Reflect Damage",
           "Defense Success Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Manticore Summoner Set": {
-      "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
         "collected": false,
         "collectedPlace": null
       }
