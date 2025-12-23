@@ -49,11 +49,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Armor": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Pants": {
         "options": [
           "Increase Maximum Life",
@@ -185,15 +180,6 @@
       }
     },
     "Lightning Magic Set": {
-      "Pants": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Increase Maximum SD",
@@ -346,17 +332,6 @@
       "Helm": {
         "options": [
           "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Dark Soul Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
           "Reflect Damage",
           "Defense Success Rate"
         ],
@@ -642,11 +617,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
@@ -782,22 +752,6 @@
         "collectedPlace": null
       }
     },
-    "Brilliant Lord Set": {
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Apocalypse Lord Set": {
       "Helm": {
         "options": ["Damage Decrease", "Defense Success Rate"],
@@ -880,15 +834,6 @@
         "options": ["Reflect Damage", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": null
-      },
-      "Gloves": {
-        "options": [
-          "Increase Maximum Life",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Brilliant Summoner Set": {
@@ -897,15 +842,6 @@
           "Increase Maximum SD",
           "Reflect Damage",
           "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Reflect Damage"
         ],
         "collected": false,
         "collectedPlace": null
