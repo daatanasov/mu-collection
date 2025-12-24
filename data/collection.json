@@ -667,17 +667,6 @@
         "collectedPlace": null
       }
     },
-    "Dark Steel Set": {
-      "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Sunlight Set": {
       "Helm": {
         "options": [
@@ -837,15 +826,6 @@
       }
     },
     "Brilliant Summoner Set": {
-      "Helm": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Pants": {
         "options": [
           "Increase Maximum Life",
