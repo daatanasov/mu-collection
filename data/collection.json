@@ -525,11 +525,6 @@
       }
     },
     "Brilliant Elf Set": {
-      "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Armor": {
         "options": [
           "Increase Maximum Life",
@@ -726,15 +721,6 @@
       }
     },
     "Manticore Lord Set": {
-      "Gloves": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Damage Decrease"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": ["Increase Maximum SD", "Damage Decrease", "Reflect Damage"],
         "collected": false,
@@ -826,6 +812,15 @@
       }
     },
     "Brilliant Summoner Set": {
+      "Helm": {
+        "options": [
+          "Increase Maximum SD",
+          "Reflect Damage",
+          "Defense Success Rate"
+        ],
+        "collected": false,
+        "collectedPlace": null
+      },
       "Pants": {
         "options": [
           "Increase Maximum Life",
@@ -841,11 +836,6 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
         "collected": false,
         "collectedPlace": null
       }
