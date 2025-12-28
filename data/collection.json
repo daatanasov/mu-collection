@@ -136,8 +136,8 @@
           "Increase Maximum SD",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "Halka-bank"
       },
       "Pants": {
         "options": [
@@ -354,11 +354,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Brilliant Wizard Set": {
@@ -386,11 +381,6 @@
           "Reflect Damage",
           "Defense Success Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": false,
         "collectedPlace": null
       },
@@ -721,15 +711,6 @@
       },
       "Gloves": {
         "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum SD",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       }
