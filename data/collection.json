@@ -164,11 +164,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Gloves": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": [
           "Damage Decrease",
@@ -360,15 +355,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Pants": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": ["Increase Maximum Life", "Damage Decrease"],
         "collected": false,
@@ -547,14 +533,14 @@
         "options": ["Damage Decrease", "Increase Zen Drop Rate"],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Apocalypse Elf Set": {
+      "Helm": {
+        "options": ["Increase Maximum SD", "Defense Success Rate"],
+        "collected": false,
+        "collectedPlace": null
+      },
       "Armor": {
         "options": [
           "Increase Maximum Life",
@@ -617,11 +603,6 @@
   },
   "Dark Lord": {
     "Light Plate Set": {
-      "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Pants": {
         "options": [
           "Increase Maximum Life",
@@ -688,15 +669,6 @@
           "Increase Maximum Life",
           "Increase Maximum SD",
           "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Armor": {
-        "options": [
-          "Increase Maximum SD",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
         ],
         "collected": false,
         "collectedPlace": null
@@ -872,11 +844,6 @@
     },
     "Lightning Summoner Set": {
       "Armor": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
         "options": ["Increase Maximum Life", "Damage Decrease"],
         "collected": false,
         "collectedPlace": null
