@@ -478,17 +478,6 @@
         "collectedPlace": null
       }
     },
-    "Red Spirit Set": {
-      "Boots": {
-        "options": [
-          "Increase Maximum SD",
-          "Damage Decrease",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Manticore Elf Set": {
       "Boots": {
         "options": [
@@ -546,11 +535,6 @@
           "Damage Decrease",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
         "collected": false,
         "collectedPlace": null
       },
@@ -668,15 +652,6 @@
           "Increase Maximum Life",
           "Increase Maximum SD",
           "Damage Decrease"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
         ],
         "collected": false,
         "collectedPlace": null
