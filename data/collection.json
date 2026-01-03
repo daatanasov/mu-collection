@@ -23,22 +23,8 @@
       }
     },
     "Brilliant Knight Set": {
-      "Helm": {
-        "options": ["Increase Maximum Life", "Increase Maximum SD"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Armor": {
         "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum SD",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       }
@@ -124,26 +110,6 @@
           "Increase Maximum Life",
           "Increase Maximum SD",
           "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Manticore Magic Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": true,
-        "collectedPlace": "Halka-bank"
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
         ],
         "collected": false,
         "collectedPlace": null
@@ -434,16 +400,6 @@
       }
     },
     "Lightning Wizard Set": {
-      "Helm": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Armor": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Damage Decrease",
@@ -784,11 +740,6 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": null
       },
