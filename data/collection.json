@@ -125,11 +125,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Pants": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": [
           "Damage Decrease",
@@ -232,19 +227,9 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Lightning Fighter Set": {
-      "Helm": {
-        "options": ["Increase Maximum SD", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Armor": {
         "options": ["Increase Maximum SD", "Damage Decrease"],
         "collected": false,
@@ -379,15 +364,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": ["Damage Decrease", "Defense Success Rate"],
         "collected": false,
@@ -471,11 +447,6 @@
       }
     },
     "Apocalypse Elf Set": {
-      "Helm": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Armor": {
         "options": [
           "Increase Maximum Life",
@@ -508,15 +479,6 @@
       },
       "Armor": {
         "options": ["Increase Maximum SD", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -623,11 +585,6 @@
     "Apocalypse Lord Set": {
       "Helm": {
         "options": ["Damage Decrease", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Armor": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": null
       },
