@@ -22,25 +22,9 @@
         "collectedPlace": null
       }
     },
-    "Brilliant Knight Set": {
-      "Armor": {
-        "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Apocalypse Knight Set": {
       "Helm": {
         "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -99,17 +83,6 @@
           "Damage Decrease",
           "Reflect Damage",
           "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Volcano Set": {
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Reflect Damage"
         ],
         "collected": false,
         "collectedPlace": null
@@ -645,13 +618,6 @@
         "collectedPlace": null
       }
     },
-    "Eternal Winged Set": {
-      "Helm": {
-        "options": ["Reflect Damage", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Brilliant Summoner Set": {
       "Helm": {
         "options": [
@@ -702,13 +668,6 @@
       },
       "Boots": {
         "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Lightning Summoner Set": {
-      "Armor": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
         "collected": false,
         "collectedPlace": null
       }
