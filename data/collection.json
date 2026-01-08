@@ -1,16 +1,5 @@
 {
   "Blade Knight": {
-    "Dragon Knight Set": {
-      "Pants": {
-        "options": [
-          "Reflect Damage",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Manticore Knight Set": {
       "Helm": {
         "options": [
@@ -130,17 +119,6 @@
     }
   },
   "Rage Fighter": {
-    "Bloody Dragon": {
-      "Helm": {
-        "options": [
-          "Increase Maximum Life",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Manticore Fighter Set": {
       "Armor": {
         "options": ["Increase Maximum Life", "Damage Decrease"],
@@ -205,15 +183,6 @@
     "Lightning Fighter Set": {
       "Armor": {
         "options": ["Increase Maximum SD", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Defense Success Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       },
@@ -383,17 +352,6 @@
         "collectedPlace": null
       }
     },
-    "Manticore Elf Set": {
-      "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Brilliant Elf Set": {
       "Armor": {
         "options": [
@@ -447,11 +405,6 @@
     "Lightning Elf Set": {
       "Helm": {
         "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Armor": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
         "collected": false,
         "collectedPlace": null
       },
