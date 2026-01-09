@@ -509,11 +509,6 @@
       }
     },
     "Apocalypse Lord Set": {
-      "Helm": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Pants": {
         "options": [
           "Damage Decrease",
