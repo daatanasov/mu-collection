@@ -501,13 +501,6 @@
         "collectedPlace": null
       }
     },
-    "Manticore Lord Set": {
-      "Boots": {
-        "options": ["Increase Maximum SD", "Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Apocalypse Lord Set": {
       "Pants": {
         "options": [
