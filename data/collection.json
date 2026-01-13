@@ -24,7 +24,7 @@
           "Increase Zen Drop Rate"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "for joe shundra bank"
       },
       "Boots": {
         "options": ["Damage Decrease", "Increase Zen Drop Rate"],
@@ -36,7 +36,7 @@
       "Pants": {
         "options": ["Damage Decrease", "Defense Success Rate"],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "for joe bogoselqka"
       },
       "Gloves": {
         "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
@@ -85,7 +85,7 @@
           "Reflect Damage"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "shundra-bank-joe"
       },
       "Boots": {
         "options": [
@@ -215,7 +215,7 @@
           "Defense Success Rate"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "dd bank joe"
       }
     },
     "Venom Mist": {
@@ -226,7 +226,7 @@
           "Reflect Damage"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "dd bank joe"
       }
     },
     "Manticore Wizard Set": {
@@ -333,7 +333,7 @@
           "Increase Zen Drop Rate"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "for joe bogoselqka"
       },
       "Pants": {
         "options": [
@@ -524,7 +524,7 @@
           "Reflect Damage"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "dd bank joe"
       }
     },
     "Brilliant Summoner Set": {
@@ -553,7 +553,7 @@
           "Increase Zen Drop Rate"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "for joe bogoselqka"
       }
     },
     "Apocalypse Summoner Set": {
