@@ -158,8 +158,8 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "tonio-bank"
       },
       "Armor": {
         "options": [
@@ -265,8 +265,8 @@
           "Defense Success Rate",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "tonio-bank"
       },
       "Pants": {
         "options": [
@@ -283,8 +283,8 @@
           "Increase Maximum SD",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
+        "collected": true,
+        "collectedPlace": "tonio-bank"
       }
     },
     "Apocalypse Wizard Set": {
@@ -403,11 +403,6 @@
       }
     },
     "Lightning Elf Set": {
-      "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Increase Maximum SD",
