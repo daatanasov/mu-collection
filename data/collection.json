@@ -37,11 +37,6 @@
         "options": ["Damage Decrease", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": "for joe bogoselqka"
-      },
-      "Gloves": {
-        "options": ["Increase Maximum SD", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
