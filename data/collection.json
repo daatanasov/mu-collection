@@ -31,13 +31,6 @@
         "collected": false,
         "collectedPlace": null
       }
-    },
-    "Lightning Knight Set": {
-      "Pants": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": "for joe bogoselqka"
-      }
     }
   },
   "Magic Gladiator": {
@@ -484,15 +477,6 @@
       "Helm": {
         "options": [
           "Increase Maximum Life",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum SD",
           "Damage Decrease",
           "Increase Zen Drop Rate"
         ],
