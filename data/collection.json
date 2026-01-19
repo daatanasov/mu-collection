@@ -314,15 +314,6 @@
       }
     },
     "Brilliant Elf Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": "for joe bogoselqka"
-      },
       "Pants": {
         "options": [
           "Increase Maximum SD",
