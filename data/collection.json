@@ -409,15 +409,6 @@
       }
     },
     "Sunlight Set": {
-      "Helm": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Increase Maximum SD",
@@ -434,15 +425,6 @@
           "Increase Maximum Life",
           "Increase Maximum SD",
           "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Damage Decrease"
         ],
         "collected": false,
         "collectedPlace": null
