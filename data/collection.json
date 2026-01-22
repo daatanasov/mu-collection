@@ -132,15 +132,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Lightning Fighter Set": {
