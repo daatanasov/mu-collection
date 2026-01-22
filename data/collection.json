@@ -192,17 +192,6 @@
         "collectedPlace": "dd bank joe"
       }
     },
-    "Manticore Wizard Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Brilliant Wizard Set": {
       "Helm": {
         "options": [
