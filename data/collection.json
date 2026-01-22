@@ -277,17 +277,6 @@
         "collected": false,
         "collectedPlace": null
       }
-    },
-    "Lightning Wizard Set": {
-      "Gloves": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
     }
   },
   "Elf": {
@@ -350,17 +339,6 @@
       },
       "Boots": {
         "options": ["Increase Maximum Life", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Lightning Elf Set": {
-      "Gloves": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       }
