@@ -113,23 +113,7 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Pants": {
-        "options": ["Increase Maximum Life", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Damage Decrease"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Brilliant Fighter Set": {
-      "Armor": {
         "options": [
           "Increase Maximum Life",
           "Increase Maximum SD",
