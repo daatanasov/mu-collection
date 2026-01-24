@@ -468,11 +468,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   }
