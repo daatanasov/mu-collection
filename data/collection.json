@@ -94,15 +94,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
