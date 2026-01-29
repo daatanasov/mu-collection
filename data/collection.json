@@ -130,11 +130,6 @@
         "options": ["Increase Maximum SD", "Damage Decrease"],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
