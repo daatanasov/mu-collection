@@ -156,17 +156,6 @@
         "collectedPlace": null
       }
     },
-    "Grand Soul": {
-      "Helm": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": "dd bank joe"
-      }
-    },
     "Venom Mist": {
       "Helm": {
         "options": [
@@ -300,11 +289,6 @@
         "collected": false,
         "collectedPlace": null
       },
-      "Gloves": {
-        "options": ["Increase Maximum Life", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": [
           "Increase Maximum Life",
@@ -370,15 +354,6 @@
       }
     },
     "Lightning Lord Set": {
-      "Helm": {
-        "options": [
-          "Increase Maximum Life",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Boots": {
         "options": [
           "Increase Maximum SD",
