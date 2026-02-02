@@ -19,10 +19,8 @@ interface CollectionData {
 const CollectionTracker: React.FC = () => {
   const [data, setData] = useState<CollectionData | null>(null);
   const [loading, setLoading] = useState(true);
-
   const [searchQuery, setSearchQuery] = useState("");
   const [hideCollected, setHideCollected] = useState(true);
-
   // NEW: Hide special sets checkbox
   const [hideSpecialSets, setHideSpecialSets] = useState(false);
 
@@ -133,7 +131,7 @@ const CollectionTracker: React.FC = () => {
   const updateCollectedPlace = (
     setName: string,
     piece: string,
-    place: string
+    place: string,
   ) => {
     if (!data) return;
 
@@ -312,7 +310,7 @@ const CollectionTracker: React.FC = () => {
                           updateCollectedPlace(
                             setName,
                             pieceName,
-                            e.target.value
+                            e.target.value,
                           )
                         }
                         placeholder="Collected in..."

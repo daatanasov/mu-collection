@@ -19,7 +19,7 @@ interface CollectionData {
 const CollectionTracker: React.FC = () => {
   const [data, setData] = useState<CollectionData | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const setCount = data ? Object.keys(data).length : 0;
   const [searchQuery, setSearchQuery] = useState("");
   const [hideCollected, setHideCollected] = useState(true);
 
@@ -133,7 +133,7 @@ const CollectionTracker: React.FC = () => {
   const updateCollectedPlace = (
     setName: string,
     piece: string,
-    place: string
+    place: string,
   ) => {
     if (!data) return;
 
@@ -230,6 +230,7 @@ const CollectionTracker: React.FC = () => {
             <label className="text-slate-300">
               Hide Manticore / Brilliant / Apocalypse / Lightning
             </label>
+            <label className="text-slate-300">{setCount}</label>
           </div>
 
           <div className="relative">
@@ -312,7 +313,7 @@ const CollectionTracker: React.FC = () => {
                           updateCollectedPlace(
                             setName,
                             pieceName,
-                            e.target.value
+                            e.target.value,
                           )
                         }
                         placeholder="Collected in..."
