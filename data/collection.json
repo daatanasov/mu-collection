@@ -195,7 +195,7 @@
           "Increase Zen Drop Rate"
         ],
         "collected": false,
-        "collectedPlace": null
+        "collectedPlace": "paris have it for joe"
       },
       "Armor": {
         "options": [
@@ -208,11 +208,6 @@
       },
       "Gloves": {
         "options": ["Damage Decrease", "Defense Success Rate"],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Damage Decrease", "Reflect Damage"],
         "collected": false,
         "collectedPlace": null
       }
@@ -349,17 +344,6 @@
       },
       "Gloves": {
         "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Lightning Lord Set": {
-      "Boots": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Increase Zen Drop Rate"
-        ],
         "collected": false,
         "collectedPlace": null
       }
