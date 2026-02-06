@@ -321,17 +321,6 @@
         "collectedPlace": null
       }
     },
-    "Royal Set": {
-      "Helm": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Apocalypse Lord Set": {
       "Pants": {
         "options": [
