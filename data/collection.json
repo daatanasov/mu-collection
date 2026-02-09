@@ -283,15 +283,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Boots": {
-        "options": [
-          "Increase Maximum Life",
-          "Damage Decrease",
-          "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Adamantine Set": {
@@ -371,15 +362,6 @@
       }
     },
     "Apocalypse Summoner Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Pants": {
         "options": [
           "Increase Maximum Life",
