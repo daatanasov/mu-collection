@@ -34,17 +34,6 @@
     }
   },
   "Magic Gladiator": {
-    "Thunder Hawk Set": {
-      "Armor": {
-        "options": [
-          "Increase Maximum Life",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Hurricane Set": {
       "Pants": {
         "options": [
@@ -203,11 +192,6 @@
           "Reflect Damage",
           "Increase Zen Drop Rate"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Gloves": {
-        "options": ["Damage Decrease", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": null
       }
