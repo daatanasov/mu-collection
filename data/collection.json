@@ -12,11 +12,6 @@
       }
     },
     "Apocalypse Knight Set": {
-      "Helm": {
-        "options": ["Damage Decrease", "Reflect Damage"],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": [
           "Increase Maximum SD",
