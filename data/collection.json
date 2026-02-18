@@ -68,17 +68,6 @@
         "collected": false,
         "collectedPlace": null
       }
-    },
-    "Lightning Magic Set": {
-      "Gloves": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
     }
   },
   "Rage Fighter": {
