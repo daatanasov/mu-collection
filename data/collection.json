@@ -149,15 +149,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     },
     "Apocalypse Wizard Set": {
