@@ -87,17 +87,6 @@
         "collectedPlace": null
       }
     },
-    "Apocalypse Fighter Set": {
-      "Armor": {
-        "options": [
-          "Damage Decrease",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Lightning Fighter Set": {
       "Armor": {
         "options": ["Increase Maximum SD", "Damage Decrease"],
@@ -196,15 +185,6 @@
       }
     },
     "Brilliant Elf Set": {
-      "Pants": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      },
       "Gloves": {
         "options": ["Damage Decrease", "Increase Zen Drop Rate"],
         "collected": false,
