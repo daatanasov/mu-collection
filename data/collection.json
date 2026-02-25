@@ -86,13 +86,6 @@
         "collected": false,
         "collectedPlace": null
       }
-    },
-    "Lightning Fighter Set": {
-      "Armor": {
-        "options": ["Increase Maximum SD", "Damage Decrease"],
-        "collected": false,
-        "collectedPlace": null
-      }
     }
   },
   "Wizard Soul Master": {
