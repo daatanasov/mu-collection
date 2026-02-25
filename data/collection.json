@@ -12,15 +12,6 @@
       }
     },
     "Apocalypse Knight Set": {
-      "Gloves": {
-        "options": [
-          "Increase Maximum SD",
-          "Reflect Damage",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": "for joe shundra bank"
-      },
       "Boots": {
         "options": ["Damage Decrease", "Increase Zen Drop Rate"],
         "collected": false,
