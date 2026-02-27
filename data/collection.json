@@ -168,13 +168,6 @@
         "collectedPlace": null
       }
     },
-    "Brilliant Elf Set": {
-      "Gloves": {
-        "options": ["Damage Decrease", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
     "Apocalypse Elf Set": {
       "Armor": {
         "options": [
