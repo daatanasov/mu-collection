@@ -49,15 +49,6 @@
         ],
         "collected": false,
         "collectedPlace": "shundra-bank-joe"
-      },
-      "Boots": {
-        "options": [
-          "Damage Decrease",
-          "Defense Success Rate",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
