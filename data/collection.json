@@ -228,11 +228,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Gloves": {
-        "options": ["Reflect Damage", "Increase Zen Drop Rate"],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
@@ -266,11 +261,6 @@
           "Increase Maximum SD",
           "Damage Decrease"
         ],
-        "collected": false,
-        "collectedPlace": null
-      },
-      "Boots": {
-        "options": ["Increase Maximum SD", "Defense Success Rate"],
         "collected": false,
         "collectedPlace": null
       }
