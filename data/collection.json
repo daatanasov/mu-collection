@@ -168,15 +168,6 @@
         ],
         "collected": false,
         "collectedPlace": null
-      },
-      "Pants": {
-        "options": [
-          "Increase Maximum SD",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
       }
     }
   },
@@ -214,17 +205,6 @@
           "Increase Maximum SD",
           "Damage Decrease",
           "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Apocalypse Lord Set": {
-      "Pants": {
-        "options": [
-          "Damage Decrease",
-          "Reflect Damage",
-          "Defense Success Rate"
         ],
         "collected": false,
         "collectedPlace": null
