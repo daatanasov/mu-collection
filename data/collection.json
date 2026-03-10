@@ -93,17 +93,6 @@
         "collectedPlace": null
       }
     },
-    "Venom Mist": {
-      "Helm": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Reflect Damage"
-        ],
-        "collected": false,
-        "collectedPlace": "dd bank joe"
-      }
-    },
     "Brilliant Wizard Set": {
       "Helm": {
         "options": [
@@ -141,17 +130,6 @@
       "Helm": {
         "options": [
           "Increase Maximum Life",
-          "Reflect Damage",
-          "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Guardian Set": {
-      "Armor": {
-        "options": [
-          "Damage Decrease",
           "Reflect Damage",
           "Defense Success Rate"
         ],
