@@ -105,15 +105,6 @@
       }
     },
     "Apocalypse Wizard Set": {
-      "Helm": {
-        "options": [
-          "Increase Maximum SD",
-          "Damage Decrease",
-          "Increase Zen Drop Rate"
-        ],
-        "collected": false,
-        "collectedPlace": "paris have it for joe"
-      },
       "Armor": {
         "options": [
           "Damage Decrease",
@@ -207,17 +198,6 @@
           "Increase Maximum Life",
           "Damage Decrease",
           "Defense Success Rate"
-        ],
-        "collected": false,
-        "collectedPlace": null
-      }
-    },
-    "Apocalypse Summoner Set": {
-      "Pants": {
-        "options": [
-          "Increase Maximum Life",
-          "Increase Maximum SD",
-          "Damage Decrease"
         ],
         "collected": false,
         "collectedPlace": null
